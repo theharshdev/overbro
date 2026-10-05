@@ -29,7 +29,7 @@ export const CategorySection: React.FC = () => {
             <Link
               key={category.id}
               href={category.slug}
-              className="group relative h-[480px] sm:h-[560px] overflow-hidden bg-neutral-900 border border-neutral-800 block"
+              className="group relative h-[480px] sm:h-[560px] rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-800 block shadow-xl"
             >
               {/* Background Image */}
               <Image
@@ -45,10 +45,10 @@ export const CategorySection: React.FC = () => {
 
               {/* Top Tag */}
               <div className="absolute top-6 left-6 right-6 flex items-center justify-between z-10">
-                <span className="px-3 py-1 bg-neutral-950/90 backdrop-blur-md border border-neutral-800 text-[10px] font-mono uppercase tracking-widest text-neutral-300">
+                <span className="px-3 py-1 bg-neutral-950/90 backdrop-blur-md border border-neutral-800 text-[10px] font-mono uppercase tracking-widest text-neutral-300 rounded-full">
                   {category.gsmRange}
                 </span>
-                <span className="w-10 h-10 bg-white text-neutral-950 flex items-center justify-center group-hover:bg-neutral-200 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+                <span className="w-10 h-10 bg-white text-neutral-950 rounded-full flex items-center justify-center group-hover:bg-neutral-200 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all shadow-md">
                   <ArrowUpRight className="w-5 h-5" />
                 </span>
               </div>
@@ -65,7 +65,7 @@ export const CategorySection: React.FC = () => {
                   {category.tagline}
                 </p>
                 <div className="pt-2">
-                  <span className="inline-block bg-white text-neutral-950 text-xs font-bold uppercase tracking-wider px-5 py-2.5 group-hover:bg-neutral-200 transition-colors">
+                  <span className="inline-block bg-white text-neutral-950 text-xs font-bold uppercase tracking-wider rounded-xl px-5 py-2.5 group-hover:bg-neutral-200 transition-colors shadow-md">
                     EXPLORE {category.name}
                   </span>
                 </div>

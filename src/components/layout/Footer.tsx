@@ -2,14 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import {
-  ArrowRight,
-  ShieldCheck,
-  Truck,
-  RotateCcw,
-  Sparkles,
-  Check,
-} from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -26,64 +19,29 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-neutral-950 border-t border-neutral-800 text-neutral-400 select-none">
       {/* Trust & Guarantee Strip */}
-      <div className="border-b border-neutral-800/80 bg-neutral-900/40 py-8">
+      <div className="border-b border-neutral-800/80 bg-neutral-900/40 py-5 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="flex items-center gap-3">
-              <Truck className="w-5 h-5 text-neutral-300 flex-shrink-0" />
-              <div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  FREE SHIPPING
-                </h4>
-                <p className="text-[11px] text-neutral-400">On all orders above ₹999</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <ShieldCheck className="w-5 h-5 text-neutral-300 flex-shrink-0" />
-              <div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  250–320 GSM COTTON
-                </h4>
-                <p className="text-[11px] text-neutral-400">Pre-shrunk, bio-washed heavy gauge</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <RotateCcw className="w-5 h-5 text-neutral-300 flex-shrink-0" />
-              <div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  7-DAY EASY EXCHANGES
-                </h4>
-                <p className="text-[11px] text-neutral-400">Doorstep pickup & quick swaps</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-neutral-300 flex-shrink-0" />
-              <div>
-                <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  MADE IN INDIA
-                </h4>
-                <p className="text-[11px] text-neutral-400">Crafted in Mumbai & Tirupur</p>
-              </div>
-            </div>
-          </div>
+          <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-white">
+            MADE IN INDIA
+          </p>
         </div>
       </div>
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-black tracking-tight text-white uppercase">
-                UBRO
+                OVERBRO
               </span>
               <span className="block text-[9px] uppercase tracking-[0.35em] text-neutral-400 font-medium">
                 OVERSIZED. BY DESIGN.
               </span>
             </Link>
             <p className="text-xs leading-relaxed text-neutral-400 max-w-sm">
-              UBro is an Indian oversized streetwear house specializing exclusively in heavyweight drop-shoulder T-shirts (250–320 GSM). Engineered for everyday durability, architectural drape, and modern street presence.
+              Overbro is an Indian oversized streetwear house specializing exclusively in heavyweight drop-shoulder T-shirts (250–320 GSM). Engineered for everyday durability, architectural drape, and modern street presence.
             </p>
 
             {/* Newsletter in Brand Col */}
@@ -95,23 +53,23 @@ export const Footer: React.FC = () => {
                 Unlock secret drop links and 10% off your first order.
               </p>
               {subscribed ? (
-                <div className="flex items-center gap-2 text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-900/60 p-3">
+                <div className="flex items-center gap-2 text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-900/60 p-3 rounded-xl">
                   <Check className="w-4 h-4" />
-                  <span>You're on the list! Welcome to the UBro community.</span>
+                  <span>You're on the list! Welcome to the Overbro community.</span>
                 </div>
               ) : (
-                <form onSubmit={handleSubscribe} className="flex max-w-sm">
+                <form onSubmit={handleSubscribe} className="flex max-w-sm gap-2">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address"
                     required
-                    className="flex-1 bg-neutral-900 border border-neutral-800 px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors"
+                    className="flex-1 bg-neutral-900 border border-neutral-800 px-4 py-2.5 text-xs text-white placeholder-neutral-500 rounded-xl focus:outline-none focus:border-white transition-colors"
                   />
                   <button
                     type="submit"
-                    className="bg-white text-neutral-950 font-bold px-4 py-2.5 text-xs tracking-wider uppercase hover:bg-neutral-200 transition-colors flex items-center gap-1"
+                    className="bg-white text-neutral-950 font-bold px-4 py-2.5 text-xs tracking-wider uppercase rounded-xl hover:bg-neutral-200 transition-colors flex items-center gap-1"
                   >
                     <span>JOIN</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -121,109 +79,60 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Nav Col 1: Shop */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold text-white uppercase tracking-widest">
-              SHOP
-            </h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <Link href="/shop" className="hover:text-white transition-colors">
-                  All Oversized Tees
-                </Link>
-              </li>
-              <li>
-                <Link href="/t-shirts" className="hover:text-white transition-colors">
-                  Oversized T-Shirts (250+ GSM)
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop?collection=heavyweight" className="hover:text-white transition-colors">
-                  Heavyweight Armor (280–320 GSM)
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop?collection=after-dark" className="hover:text-white transition-colors">
-                  Graphic Drops (After Dark)
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop?collection=the-core" className="hover:text-white transition-colors">
-                  The Core Collection
-                </Link>
-              </li>
-              <li>
-                <Link href="/collections" className="hover:text-white transition-colors">
-                  Drop Archives
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Nav Col 2: Help & Info */}
+          {/* Nav Col 1: Help & Info */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-widest">
               HELP & SUPPORT
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/account" className="hover:text-white transition-colors">
+                <Link href="/track-order" className="hover:text-white transition-colors">
                   Track Your Order
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/size-guide" className="hover:text-white transition-colors">
                   Size Guide & Fit Manifesto
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/fabric-standards" className="hover:text-white transition-colors">
                   Fabric & Quality Standards
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/shipping" className="hover:text-white transition-colors">
                   Shipping & Delivery Info
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  7-Day Returns & Exchanges
+                <Link href="/exchanges" className="hover:text-white transition-colors">
+                  7-Day Exchanges Only
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-white transition-colors">
                   Contact Support
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Nav Col 3: Brand & Culture */}
+          {/* Nav Col 2: Socials Only */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-widest">
               COMMUNITY
             </h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  This is UBro
-                </Link>
-              </li>
-              <li>
-                <Link href="/collections" className="hover:text-white transition-colors">
-                  Drop Archives
-                </Link>
-              </li>
+            <ul className="space-y-2.5 text-xs">
               <li>
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-white transition-colors flex items-center gap-1.5"
+                  className="hover:text-white transition-colors flex items-center gap-2 group"
                 >
                   <span>Instagram</span>
-                  <span className="text-[10px] text-neutral-500">#UBROSTREET</span>
+                  <span className="text-[10px] text-neutral-500 group-hover:text-neutral-300 transition-colors">#OVERBROSTREET</span>
                 </a>
               </li>
               <li>
@@ -246,11 +155,6 @@ export const Footer: React.FC = () => {
                   X (Twitter)
                 </a>
               </li>
-              <li>
-                <span className="text-neutral-500 text-[11px] block mt-2">
-                  Customer Desk: care@ubro.in
-                </span>
-              </li>
             </ul>
           </div>
         </div>
@@ -258,7 +162,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar: Payment, Legal & Copyright */}
         <div className="mt-16 pt-8 border-t border-neutral-900 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
           <div>
-            <p>© {new Date().getFullYear()} UBro Apparel Pvt. Ltd. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Overbro Apparel Pvt. Ltd. All rights reserved.</p>
             <p className="text-[11px] text-neutral-400 mt-0.5">
               Engineered for the Indian oversized streetwear movement.
             </p>
@@ -266,12 +170,12 @@ export const Footer: React.FC = () => {
 
           {/* Payment Badges */}
           <div className="flex items-center gap-2 flex-wrap text-[10px] tracking-wider font-mono text-neutral-400 uppercase">
-            <span className="border border-neutral-800 bg-neutral-900 px-2 py-1">UPI</span>
-            <span className="border border-neutral-800 bg-neutral-900 px-2 py-1">PhonePe</span>
-            <span className="border border-neutral-800 bg-neutral-900 px-2 py-1">GPay</span>
-            <span className="border border-neutral-800 bg-neutral-900 px-2 py-1">RuPay</span>
-            <span className="border border-neutral-800 bg-neutral-900 px-2 py-1">Cards</span>
-            <span className="border border-neutral-800 bg-neutral-900 px-2 py-1">COD</span>
+            <span className="border border-neutral-800 bg-neutral-900 px-3 py-1 rounded-full">UPI</span>
+            <span className="border border-neutral-800 bg-neutral-900 px-3 py-1 rounded-full">PhonePe</span>
+            <span className="border border-neutral-800 bg-neutral-900 px-3 py-1 rounded-full">GPay</span>
+            <span className="border border-neutral-800 bg-neutral-900 px-3 py-1 rounded-full">RuPay</span>
+            <span className="border border-neutral-800 bg-neutral-900 px-3 py-1 rounded-full">Cards</span>
+            <span className="border border-neutral-800 bg-neutral-900 px-3 py-1 rounded-full">NetBanking</span>
           </div>
         </div>
       </div>

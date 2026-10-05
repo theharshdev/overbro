@@ -1,5 +1,8 @@
 import { Product } from '@/types/product';
 
+export const SINGLE_TSHIRT_IMAGE = '/black-oversized-tee.png';
+
+
 export const PRODUCTS: Product[] = [
   // ===================== 16 OVERSIZED T-SHIRTS (ALL 250+ GSM) =====================
   {
@@ -16,7 +19,7 @@ export const PRODUCTS: Product[] = [
     fabric: '250 GSM 100% Super-Combed Bio-Washed Cotton',
     fit: 'Signature Boxy Fit with Exaggerated Drop Shoulder',
     description: 'The foundation of the UBro uniform. Cut from ultra-dense 250 GSM combed cotton with a ribbed crewneck that retains its structure wear after wear. Engineered to drape effortlessly without clinging.',
-    story: 'Refined through 14 silhouette iterations in our Mumbai lab to achieve the golden ratio of shoulder drape to body length.',
+    story: 'Refined through 14 silhouette iterations in our Delhi design studio to achieve the golden ratio of shoulder drape to body length.',
     colors: [
       { name: 'Pitch Black', hex: '#111111', inStock: true },
       { name: 'Chalk White', hex: '#f4f4f2', inStock: true },
@@ -29,11 +32,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 9 },
       { size: 'XXL', inStock: true, stockCount: 5 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.9,
     reviewCount: 184,
     badge: 'BESTSELLER',
@@ -45,7 +44,7 @@ export const PRODUCTS: Product[] = [
     details: {
       fabricAndQuality: 'High-density 250 GSM long-staple Indian combed cotton. Bio-washed with natural enzymes for a peached velvet touch and silicon-softened to prevent pilling.',
       fitAndStyling: 'Distinct boxy silhouette featuring an exaggerated 4-inch drop shoulder and longer sleeves that rest near the elbow bend.',
-      shippingAndReturns: 'Dispatched within 24 hours from our warehouse. Free doorstep pickup on returns and size exchanges within 7 days.',
+      shippingAndReturns: 'Dispatched within 24 hours from our warehouse. Free doorstep pickup on size exchanges within 7 days.',
       careInstructions: 'Machine wash cold inside-out on gentle cycle. Do not wring or tumble dry. Dry flat in shade. Cool iron on reverse.',
     },
   },
@@ -75,11 +74,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 11 },
       { size: 'XXL', inStock: true, stockCount: 4 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.95,
     reviewCount: 312,
     badge: 'HEAVYWEIGHT',
@@ -91,7 +86,7 @@ export const PRODUCTS: Product[] = [
     details: {
       fabricAndQuality: 'High-density 280 GSM compact spun yarn. Pre-shrunk twice to guarantee less than 1% dimensional shift after laundry.',
       fitAndStyling: 'True relaxed oversized block. Wide chest profile with double-stitched 1.25" seamless neck ribbing that never bacon-curls.',
-      shippingAndReturns: 'Express tracked shipping. Delivered in 2-4 business days across India. Cash on Delivery supported.',
+      shippingAndReturns: 'Express tracked shipping. Delivered in 2-4 business days across India. 100% secure payments.',
       careInstructions: 'Cold hand or machine wash. Line dry in shade to maintain the deep jet black dye saturation.',
     },
   },
@@ -121,11 +116,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 8 },
       { size: 'XXL', inStock: false, stockCount: 0 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.85,
     reviewCount: 96,
     badge: 'NEW DROP',
@@ -167,11 +158,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 7 },
       { size: 'XXL', inStock: true, stockCount: 3 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.92,
     reviewCount: 220,
     badge: 'LIMITED',
@@ -213,11 +200,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 8 },
       { size: 'XXL', inStock: true, stockCount: 2 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.88,
     reviewCount: 142,
     badge: 'STAFF PICK',
@@ -228,7 +211,7 @@ export const PRODUCTS: Product[] = [
     details: {
       fabricAndQuality: '270 GSM custom mineral wash finish with reinforced collar binding and silicon wash.',
       fitAndStyling: 'Relaxed through the torso with elongated elbow-length sleeves for a vintage skater drape.',
-      shippingAndReturns: 'Free express shipping on all orders over ₹999. Easy return pickup from your doorstep.',
+      shippingAndReturns: 'Free express shipping on all orders over ₹999. Easy exchange pickup from your doorstep.',
       careInstructions: 'Wash separately on first wash to allow excess mineral dyes to settle.',
     },
   },
@@ -258,11 +241,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 6 },
       { size: 'XXL', inStock: true, stockCount: 4 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.89,
     reviewCount: 110,
     badge: 'NEW DROP',
@@ -304,11 +283,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 5 },
       { size: 'XXL', inStock: false, stockCount: 0 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.82,
     reviewCount: 78,
     badge: 'LIMITED',
@@ -319,7 +294,7 @@ export const PRODUCTS: Product[] = [
     details: {
       fabricAndQuality: 'Custom pigment dyed with natural plant extracts for rich tonal variation in 260 GSM cotton.',
       fitAndStyling: 'Raw-rolled edge hem provides a natural, undone look that elevates basic streetwear fits.',
-      shippingAndReturns: 'Cash on delivery available. Free shipping on orders over ₹999.',
+      shippingAndReturns: 'Fast express delivery available. Free shipping on orders over ₹999.',
       careInstructions: 'Hand wash or delicate machine wash cold. Do not iron directly on raw hems.',
     },
   },
@@ -349,11 +324,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 12 },
       { size: 'XXL', inStock: true, stockCount: 6 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.96,
     reviewCount: 264,
     badge: 'HEAVYWEIGHT',
@@ -395,11 +366,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 15 },
       { size: 'XXL', inStock: true, stockCount: 6 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.98,
     reviewCount: 380,
     badge: 'HEAVYWEIGHT',
@@ -441,11 +408,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 8 },
       { size: 'XXL', inStock: true, stockCount: 4 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.91,
     reviewCount: 156,
     badge: 'NEW DROP',
@@ -487,11 +450,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 10 },
       { size: 'XXL', inStock: true, stockCount: 3 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.87,
     reviewCount: 124,
     badge: 'STAFF PICK',
@@ -532,11 +491,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 8 },
       { size: 'XXL', inStock: false, stockCount: 0 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.89,
     reviewCount: 92,
     badge: 'NEW DROP',
@@ -548,7 +503,7 @@ export const PRODUCTS: Product[] = [
     details: {
       fabricAndQuality: '250 GSM unbleached organic combed cotton with double-stitched collar binding.',
       fitAndStyling: 'True oversized drape; buy standard size for intended look.',
-      shippingAndReturns: 'Dispatch in 24 hours. Cash on delivery available.',
+      shippingAndReturns: 'Dispatch in 24 hours. Free express shipping on orders over ₹999.',
       careInstructions: 'Machine wash gentle. Do not tumble dry.',
     },
   },
@@ -578,11 +533,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 9 },
       { size: 'XXL', inStock: true, stockCount: 2 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.86,
     reviewCount: 105,
     badge: 'LIMITED',
@@ -623,11 +574,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 8 },
       { size: 'XXL', inStock: true, stockCount: 3 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.9,
     reviewCount: 138,
     badge: 'HEAVYWEIGHT',
@@ -668,11 +615,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 9 },
       { size: 'XXL', inStock: true, stockCount: 2 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.88,
     reviewCount: 116,
     badge: 'LIMITED',
@@ -701,7 +644,7 @@ export const PRODUCTS: Product[] = [
     fabric: '290 GSM Heavy Compact Ring-Spun Cotton',
     fit: 'Exaggerated Wide Box Cut with Extended Sleeves',
     description: 'Tailored for skaters and streetwear purists. Cut wider than conventional oversized tees with deep armholes and a thick 1.25" neck rib.',
-    story: 'Tested by street skaters across Mumbai and Delhi. Resists chafing, holds structure during movement.',
+    story: 'Tested by street skaters across Delhi streets. Resists chafing, holds structure during movement.',
     colors: [
       { name: 'Iron Gray', hex: '#4a4d54', inStock: true },
       { name: 'Cement Dark', hex: '#373a40', inStock: true },
@@ -713,11 +656,7 @@ export const PRODUCTS: Product[] = [
       { size: 'XL', inStock: true, stockCount: 11 },
       { size: 'XXL', inStock: true, stockCount: 4 },
     ],
-    images: [
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop',
-    ],
+    images: [SINGLE_TSHIRT_IMAGE],
     rating: 4.93,
     reviewCount: 172,
     badge: 'HEAVYWEIGHT',
@@ -743,7 +682,7 @@ export const CATEGORIES = [
     count: 8,
     gsmRange: '280 – 320 GSM',
     tagline: 'Sculptural Monolithic Cotton • Architectural Zero-Cling Drape',
-    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
+    image: SINGLE_TSHIRT_IMAGE,
   },
   {
     id: 'core-and-graphic',
@@ -752,7 +691,7 @@ export const CATEGORIES = [
     count: 8,
     gsmRange: '250 – 270 GSM',
     tagline: 'High-Density 3D Puff Prints • Bio-Washed Everyday Luxury',
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
+    image: SINGLE_TSHIRT_IMAGE,
   },
 ];
 
@@ -763,7 +702,7 @@ export const COLLECTIONS = [
     slug: '/shop?collection=the-core',
     description: 'The fundamental wardrobe essentials. Monochromatic tones, everyday luxury 250+ GSM weights.',
     count: 6,
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1200&auto=format&fit=crop',
+    image: SINGLE_TSHIRT_IMAGE,
   },
   {
     id: 'heavyweight',
@@ -771,7 +710,7 @@ export const COLLECTIONS = [
     slug: '/shop?collection=heavyweight',
     description: '280 to 320 GSM architectural cotton. Holds its sculpt without clinging to the body.',
     count: 6,
-    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
+    image: SINGLE_TSHIRT_IMAGE,
   },
   {
     id: 'after-dark',
@@ -779,7 +718,7 @@ export const COLLECTIONS = [
     slug: '/shop?collection=after-dark',
     description: 'High-density 3D puff prints, cyber-grid backprints, and reflective night details.',
     count: 4,
-    image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop',
+    image: SINGLE_TSHIRT_IMAGE,
   },
   {
     id: 'new-drop',
@@ -787,7 +726,7 @@ export const COLLECTIONS = [
     slug: '/shop?collection=new-drop',
     description: 'Fresh oversized drops crafted in strictly capped batch quantities.',
     count: 6,
-    image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1200&auto=format&fit=crop',
+    image: SINGLE_TSHIRT_IMAGE,
   },
 ];
 
@@ -808,30 +747,30 @@ export const BRAND_PERKS = [
     icon: 'RefreshCw',
   },
   {
-    title: 'CASH ON DELIVERY & UPI',
-    description: 'Secure instant payments via PhonePe, Google Pay, Cards, and COD.',
+    title: '100% SECURE PREPAID PAYMENTS',
+    description: 'Instant encrypted payments via PhonePe, Google Pay, UPI, NetBanking, and Cards.',
     icon: 'CreditCard',
   },
 ];
 
 export const LOOKBOOK_IMAGES = [
   {
-    url: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1000&auto=format&fit=crop',
+    url: SINGLE_TSHIRT_IMAGE,
     tag: '@aditya_streetwear in UBro Heavyweight 280 GSM Black Tee',
-    location: 'Bandra, Mumbai',
+    location: 'Connaught Place, New Delhi',
   },
   {
-    url: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1000&auto=format&fit=crop',
+    url: SINGLE_TSHIRT_IMAGE,
     tag: '@kabir_rawat in UBro Monolith 320 GSM Tee',
     location: 'Hauz Khas, New Delhi',
   },
   {
-    url: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=1000&auto=format&fit=crop',
+    url: SINGLE_TSHIRT_IMAGE,
     tag: '@tanya.drapes in UBro Tokyo Mirage 300 GSM Tee (Size XL)',
     location: 'Indiranagar, Bangalore',
   },
   {
-    url: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1000&auto=format&fit=crop',
+    url: SINGLE_TSHIRT_IMAGE,
     tag: '@rohan_vibe in 270 GSM Cyber-Grid Backprint Tee',
     location: 'Koregaon Park, Pune',
   },

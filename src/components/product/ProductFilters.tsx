@@ -150,36 +150,6 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
         </div>
       </div>
 
-      {/* Color Filter */}
-      <div className="space-y-3">
-        <h4 className="font-bold uppercase tracking-wider text-neutral-400 text-[11px]">
-          PALETTE & SHADES
-        </h4>
-        <div className="grid grid-cols-3 gap-2">
-          {AVAILABLE_COLORS.map((color) => {
-            const isSelected = filters.colors.includes(color.name);
-            return (
-              <button
-                key={color.name}
-                type="button"
-                onClick={() => toggleColor(color.name)}
-                className={`flex items-center gap-2 p-2 border transition-all ${
-                  isSelected
-                    ? 'border-white bg-neutral-900 text-white'
-                    : 'border-neutral-800 bg-neutral-950 text-neutral-400 hover:border-neutral-700'
-                }`}
-              >
-                <span
-                  className="w-3 h-3 rounded-none border border-neutral-700 flex-shrink-0"
-                  style={{ backgroundColor: color.hex }}
-                />
-                <span className="text-[11px] font-medium truncate">{color.name}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
       {/* Price Range */}
       <div className="space-y-3">
         <h4 className="font-bold uppercase tracking-wider text-neutral-400 text-[11px]">

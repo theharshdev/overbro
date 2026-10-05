@@ -17,16 +17,15 @@ interface ProductCardProps {
 export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = false }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [quickAddOpen, setQuickAddOpen] = useState(false);
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]?.name || '');
   const { addItem } = useCartStore();
   const { addToast } = useToastStore();
 
-  const activeColorObj = product.colors.find((c) => c.name === selectedColor) || product.colors[0];
+  const defaultColor = product.colors[0] || { name: 'Standard', hex: '#000000' };
 
   const handleQuickAddSize = (e: React.MouseEvent, size: ProductSize) => {
     e.preventDefault();
     e.stopPropagation();
-    addItem(product, size, activeColorObj.name, activeColorObj.hex, 1);
+    addItem(product, size, defaultColor.name, defaultColor.hex, 1);
     addToast('ADDED TO BAG', `${product.name} (Size: ${size}) added.`, 'success');
     setQuickAddOpen(false);
   };
@@ -35,7 +34,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
 
   return (
     <div
-      className="group relative flex flex-col bg-neutral-950 border border-neutral-800/80 hover:border-neutral-700 transition-all duration-300"
+      className="group relative flex flex-col bg-neutral-950 border border-neutral-800/80 hover:border-neutral-700 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -43,7 +42,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       }}
     >
       {/* Top Media Container (Aspect Ratio 3:4) */}
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-900 select-none">
+      <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-900 select-none rounded-t-2xl">
         <Link href={`/products/${product.slug}`} className="block w-full h-full">
           {/* Main Primary Image */}
           <Image
@@ -73,37 +72,26 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
           )}
         </Link>
 
-        {/* Top Badges (New / Bestseller / GSM) */}
-        <div className="absolute top-2.5 left-2.5 flex flex-col gap-1 z-10 pointer-events-none">
-          {product.badge && (
-            <span
-              className={`px-2 py-0.5 text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest ${
-                product.badge === 'BESTSELLER'
-                  ? 'bg-white text-neutral-950'
-                  : product.badge === 'HEAVYWEIGHT'
-                  ? 'bg-neutral-800 text-neutral-100 border border-neutral-700'
-                  : product.badge === 'NEW DROP'
-                  ? 'bg-red-600 text-white'
-                  : 'bg-neutral-900 text-neutral-200 border border-neutral-800'
-              }`}
-            >
-              {product.badge}
-            </span>
-          )}
-          <span className="px-1.5 py-0.5 text-[8px] sm:text-[9px] font-mono font-bold bg-neutral-950/80 backdrop-blur-sm text-neutral-300 border border-neutral-800 self-start">
-            {product.gsm} GSM
+        {/* SALE Tag (Top Left) */}
+        <div className="absolute top-3 left-3 z-10 pointer-events-none">
+          <span
+            data-badge="sale"
+            className="sale-badge px-2.5 py-0.5 text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-red-600 shadow-sm rounded-full text-[#ffffff]"
+            style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
+          >
+            SALE
           </span>
         </div>
 
         {/* Wishlist Heart Button (Top Right) */}
         <div className="absolute top-2.5 right-2.5 z-20">
-          <div className="bg-neutral-950/70 backdrop-blur-md p-1.5 border border-neutral-800/80 hover:border-neutral-600 transition-colors">
+          <div className="bg-neutral-950/70 backdrop-blur-md p-1.5 border border-neutral-800/80 hover:border-neutral-600 rounded-full transition-colors">
             <WishlistButton productId={product.id} productName={product.name} size="sm" />
           </div>
         </div>
 
-        {/* Quick Add Bar (Sliding up from bottom) */}
-        <div className="absolute bottom-0 inset-x-0 z-20 transition-all duration-300">
+        {/* Quick Add Bar (Floating above bottom edge with spacing) */}
+        <div className="absolute bottom-3 inset-x-3 z-20 transition-all duration-300">
           {!quickAddOpen ? (
             <button
               type="button"
@@ -111,24 +99,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
                 e.preventDefault();
                 setQuickAddOpen(true);
               }}
-              className="w-full py-2.5 bg-neutral-950/90 backdrop-blur-md border-t border-neutral-800 text-white text-[11px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white hover:text-neutral-950 flex items-center justify-center gap-1.5"
+              className="w-full py-2.5 px-4 bg-neutral-950/90 backdrop-blur-md border border-neutral-800 text-white text-[11px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all hover:bg-white hover:text-neutral-950 flex items-center justify-center gap-1.5 rounded-xl shadow-lg"
             >
               <Plus className="w-3.5 h-3.5" />
               <span>QUICK ADD</span>
             </button>
           ) : (
-            <div className="bg-neutral-950/95 backdrop-blur-md border-t border-neutral-800 p-2 text-center animate-in fade-in slide-in-from-bottom-2">
+            <div className="bg-neutral-950/95 backdrop-blur-md border border-neutral-800 p-2.5 text-center animate-in fade-in slide-in-from-bottom-2 rounded-xl shadow-xl">
               <span className="text-[10px] uppercase font-bold text-neutral-400 block mb-1.5 tracking-wider">
                 SELECT SIZE
               </span>
-              <div className="flex items-center justify-center gap-1 flex-wrap">
+              <div className="flex items-center justify-center gap-1.5 flex-wrap">
                 {product.sizes.map((s) => (
                   <button
                     key={s.size}
                     type="button"
                     disabled={!s.inStock}
                     onClick={(e) => handleQuickAddSize(e, s.size)}
-                    className={`w-7 h-7 text-[10px] font-bold font-mono transition-colors flex items-center justify-center border ${
+                    className={`w-7 h-7 text-[10px] font-bold font-mono rounded-lg transition-colors flex items-center justify-center border ${
                       s.inStock
                         ? 'border-neutral-700 bg-neutral-900 text-white hover:bg-white hover:text-neutral-950'
                         : 'border-neutral-800 bg-neutral-950 text-neutral-600 line-through cursor-not-allowed'
@@ -146,28 +134,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       {/* Product Information */}
       <div className="p-3 sm:p-4 flex flex-col flex-1 justify-between gap-2">
         <div>
-          {/* Color Dots */}
-          <div className="flex items-center gap-1.5 mb-1.5">
-            {product.colors.map((c) => (
-              <button
-                key={c.name}
-                type="button"
-                onClick={() => setSelectedColor(c.name)}
-                className={`w-2.5 h-2.5 rounded-full border transition-all ${
-                  selectedColor === c.name
-                    ? 'ring-1 ring-white ring-offset-1 ring-offset-neutral-950 scale-110 border-white'
-                    : 'border-neutral-700 hover:scale-105'
-                }`}
-                style={{ backgroundColor: c.hex }}
-                title={c.name}
-                aria-label={`Select ${c.name}`}
-              />
-            ))}
-            <span className="text-[10px] text-neutral-400 ml-1 truncate">
-              {activeColorObj?.name}
-            </span>
-          </div>
-
           {/* Title */}
           <Link href={`/products/${product.slug}`} className="block">
             <h3 className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider line-clamp-1 group-hover:underline">
@@ -194,7 +160,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
             )}
           </div>
           {product.discountPercentage && (
-            <span className="text-[9px] font-mono font-bold text-emerald-400">
+            <span
+              data-badge="save"
+              className="save-badge px-2 py-0.5 text-[9px] font-mono font-bold rounded-full"
+            >
               {product.discountPercentage}% OFF
             </span>
           )}

@@ -27,7 +27,7 @@ export const CartItemComponent: React.FC<CartItemComponentProps> = ({
         href={`/products/${item.slug}`}
         className={`relative ${
           compact ? 'w-20 h-24' : 'w-24 h-32'
-        } bg-neutral-900 flex-shrink-0 overflow-hidden group border border-neutral-800`}
+        } bg-neutral-900 rounded-xl flex-shrink-0 overflow-hidden group border border-neutral-800`}
       >
         <Image
           src={item.image}
@@ -51,7 +51,7 @@ export const CartItemComponent: React.FC<CartItemComponentProps> = ({
             <button
               type="button"
               onClick={() => onRemove(item.id)}
-              className="text-neutral-500 hover:text-red-400 p-1 transition-colors"
+              className="text-neutral-500 hover:text-red-400 p-1.5 rounded-full hover:bg-neutral-900 transition-colors"
               aria-label={`Remove ${item.name} from bag`}
             >
               <Trash2 className="w-4 h-4" />
@@ -59,16 +59,9 @@ export const CartItemComponent: React.FC<CartItemComponentProps> = ({
           </div>
 
           <div className="flex items-center gap-3 mt-1.5 text-xs text-neutral-400">
-            <span className="bg-neutral-900 border border-neutral-800 px-2 py-0.5 font-bold uppercase text-[10px] text-white">
+            <span className="bg-neutral-900 border border-neutral-800 px-2 py-0.5 font-bold uppercase text-[10px] text-white rounded-md">
               SIZE: {item.size}
             </span>
-            <div className="flex items-center gap-1.5 text-[11px]">
-              <span
-                className="w-2.5 h-2.5 rounded-full border border-neutral-700"
-                style={{ backgroundColor: item.colorHex }}
-              />
-              <span className="text-neutral-300">{item.color}</span>
-            </div>
           </div>
         </div>
 

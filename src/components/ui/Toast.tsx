@@ -14,7 +14,7 @@ export const ToastContainer: React.FC = () => {
       {toasts.map((toast) => (
         <div
           key={toast.id}
-          className="pointer-events-auto bg-neutral-900 border border-neutral-700 text-white p-4 shadow-2xl flex items-start gap-3 transition-all duration-200"
+          className="pointer-events-auto bg-neutral-900 border border-neutral-700 text-white p-4 shadow-2xl flex items-start gap-3 transition-all duration-200 rounded-2xl"
         >
           {toast.type === 'success' && (
             <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
@@ -40,7 +40,7 @@ export const ToastContainer: React.FC = () => {
           <button
             type="button"
             onClick={() => removeToast(toast.id)}
-            className="text-neutral-500 hover:text-white p-0.5"
+            className="text-neutral-500 hover:text-white p-1 rounded-full hover:bg-neutral-800 transition-colors"
             aria-label="Close notification"
           >
             <X className="w-4 h-4" />

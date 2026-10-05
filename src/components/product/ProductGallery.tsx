@@ -20,33 +20,35 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
 
   return (
     <div className="flex flex-col-reverse lg:flex-row gap-4">
-      {/* Thumbnails Sidebar */}
-      <div className="flex lg:flex-col gap-3 overflow-x-auto lg:overflow-y-auto pb-2 lg:pb-0 scrollbar-none">
-        {images.map((imgUrl, idx) => (
-          <button
-            key={idx}
-            type="button"
-            onClick={() => setSelectedIdx(idx)}
-            className={`relative w-16 h-20 sm:w-20 sm:h-24 flex-shrink-0 bg-neutral-900 overflow-hidden border transition-all ${
-              selectedIdx === idx
-                ? 'border-white ring-1 ring-white'
-                : 'border-neutral-800 opacity-60 hover:opacity-100'
-            }`}
-            aria-label={`View photo ${idx + 1} of ${productName}`}
-          >
-            <Image
-              src={imgUrl}
-              alt={`${productName} thumbnail ${idx + 1}`}
-              fill
-              sizes="80px"
-              className="object-cover"
-            />
-          </button>
-        ))}
-      </div>
+      {/* Thumbnails Sidebar - only if multiple images */}
+      {images.length > 1 && (
+        <div className="flex lg:flex-col gap-3 overflow-x-auto lg:overflow-y-auto pb-2 lg:pb-0 scrollbar-none">
+          {images.map((imgUrl, idx) => (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => setSelectedIdx(idx)}
+              className={`relative w-16 h-20 sm:w-20 sm:h-24 flex-shrink-0 bg-neutral-900 rounded-xl overflow-hidden border transition-all ${
+                selectedIdx === idx
+                  ? 'border-white ring-1 ring-white'
+                  : 'border-neutral-800 opacity-60 hover:opacity-100'
+              }`}
+              aria-label={`View photo ${idx + 1} of ${productName}`}
+            >
+              <Image
+                src={imgUrl}
+                alt={`${productName} thumbnail ${idx + 1}`}
+                fill
+                sizes="80px"
+                className="object-cover"
+              />
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Main Large Image */}
-      <div className="relative aspect-[3/4] w-full bg-neutral-900 border border-neutral-800 overflow-hidden group select-none">
+      <div className="relative aspect-[3/4] w-full bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden group select-none shadow-xl">
         <Image
           src={images[selectedIdx] || images[0]}
           alt={productName}
@@ -56,30 +58,23 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
           className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
         />
 
-        {/* Floating Badges */}
-        <div className="absolute top-4 left-4 flex flex-col gap-1.5 z-10 pointer-events-none">
-          {badge && (
-            <span
-              className={`px-3 py-1 text-xs font-black uppercase tracking-widest ${
-                badge === 'BESTSELLER'
-                  ? 'bg-white text-neutral-950'
-                  : badge === 'HEAVYWEIGHT'
-                  ? 'bg-neutral-900 text-white border border-neutral-700'
-                  : 'bg-red-600 text-white'
-              }`}
-            >
-              {badge}
-            </span>
-          )}
-          <span className="px-2.5 py-1 text-xs font-mono font-bold bg-neutral-950/80 backdrop-blur-md text-neutral-200 border border-neutral-800 self-start">
-            {gsm} GSM
+        {/* SALE Tag (Top Left) */}
+        <div className="absolute top-4 left-4 z-10 pointer-events-none">
+          <span
+            data-badge="sale"
+            className="sale-badge px-3 py-1 text-[10px] sm:text-xs font-black uppercase tracking-widest bg-red-600 shadow-md rounded-full text-[#ffffff]"
+            style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
+          >
+            SALE
           </span>
         </div>
 
-        {/* Image index indicator */}
-        <div className="absolute bottom-4 right-4 bg-neutral-950/80 backdrop-blur-md border border-neutral-800 px-2.5 py-1 text-[11px] font-mono text-neutral-400">
-          {selectedIdx + 1} / {images.length}
-        </div>
+        {/* Image index indicator - only if multiple images */}
+        {images.length > 1 && (
+          <div className="absolute bottom-4 right-4 bg-neutral-950/80 backdrop-blur-md border border-neutral-800 px-3 py-1 text-[11px] font-mono text-neutral-400 rounded-full">
+            {selectedIdx + 1} / {images.length}
+          </div>
+        )}
       </div>
     </div>
   );

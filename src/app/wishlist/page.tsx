@@ -47,7 +47,7 @@ export default function WishlistPage() {
       </div>
 
       {wishlistProducts.length === 0 ? (
-        <div className="py-24 text-center border border-neutral-800 bg-neutral-900/30 p-8 max-w-xl mx-auto space-y-4">
+        <div className="py-24 text-center border border-neutral-800 bg-neutral-900/30 p-8 max-w-xl mx-auto space-y-4 rounded-3xl">
           <div className="w-16 h-16 border border-neutral-800 rounded-full flex items-center justify-center mx-auto bg-neutral-900 text-neutral-400">
             <Heart className="w-7 h-7" />
           </div>
@@ -60,7 +60,7 @@ export default function WishlistPage() {
           <div className="pt-2">
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 bg-white text-neutral-950 px-8 py-3 text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-neutral-950 px-8 py-3 text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-colors rounded-xl shadow-md"
             >
               <span>EXPLORE NEW DROPS</span>
               <ArrowRight className="w-4 h-4" />

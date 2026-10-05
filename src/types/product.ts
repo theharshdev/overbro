@@ -99,7 +99,7 @@ export interface Order {
   shipping: number;
   total: number;
   status: 'Processing' | 'Shipped' | 'Out for Delivery' | 'Delivered';
-  paymentMethod: 'UPI' | 'Card' | 'NetBanking' | 'Cash on Delivery';
+  paymentMethod: 'UPI' | 'Card' | 'NetBanking';
   shippingAddress: ShippingAddress;
   estimatedDelivery: string;
 }

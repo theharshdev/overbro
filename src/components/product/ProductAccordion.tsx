@@ -28,7 +28,7 @@ export const ProductAccordion: React.FC<ProductAccordionProps> = ({ product }) =
       content: (
         <div className="space-y-3 text-neutral-300 text-xs leading-relaxed">
           <p>{product.description}</p>
-          <div className="p-3 bg-neutral-900 border-l-2 border-white text-neutral-300 italic">
+          <div className="p-3 bg-neutral-900 border-l-2 border-white text-neutral-300 italic rounded-r-xl">
             "{product.story}"
           </div>
         </div>
@@ -58,7 +58,7 @@ export const ProductAccordion: React.FC<ProductAccordionProps> = ({ product }) =
       title: 'FIT & SILHOUETTE GUIDE',
       content: (
         <div className="space-y-2 text-neutral-300 text-xs leading-relaxed">
-          <div className="p-2.5 bg-neutral-900 border border-neutral-800 text-[11px] font-mono text-white font-bold uppercase">
+          <div className="p-2.5 bg-neutral-900 border border-neutral-800 text-[11px] font-mono text-white font-bold uppercase rounded-xl">
             {product.fit}
           </div>
           <p>{product.details.fitAndStyling}</p>
@@ -73,22 +73,22 @@ export const ProductAccordion: React.FC<ProductAccordionProps> = ({ product }) =
           <p>{product.details.shippingAndReturns}</p>
           <ul className="list-disc list-inside space-y-1 text-neutral-400">
             <li>Free standard express delivery on orders over ₹999</li>
-            <li>Cash on delivery available across 19,000+ Indian pincodes</li>
+            <li>Express door delivery across 19,000+ Indian pincodes</li>
             <li>Dispatched in tamper-proof custom matte packaging</li>
           </ul>
         </div>
       ),
     },
     {
-      id: 'returns',
-      title: '7-DAY RETURNS & FREE EXCHANGES',
+      id: 'exchanges',
+      title: '7-DAY DOORSTEP EXCHANGES (NO RETURNS)',
       content: (
         <div className="space-y-2 text-neutral-300 text-xs leading-relaxed">
           <p>
-            Wrong size? No problem. We provide 100% free doorstep exchange for size swaps within 7 days of delivery.
+            Need a different size or fit? We provide hassle-free doorstep size exchanges within 7 days of delivery.
           </p>
           <p className="text-neutral-400">
-            Garments must be unworn, unwashed, with all original tags attached. Instant exchange dispatch upon pickup scan.
+            Please note: We operate an exchange-only policy (no cash or payment returns). Garments must be unworn, unwashed, with all original tags intact.
           </p>
         </div>
       ),
@@ -100,10 +100,10 @@ export const ProductAccordion: React.FC<ProductAccordionProps> = ({ product }) =
         <div className="space-y-2 text-neutral-300 text-xs leading-relaxed">
           <p>{product.details.careInstructions}</p>
           <div className="flex gap-2 flex-wrap text-[10px] font-mono text-neutral-400 uppercase pt-2">
-            <span className="border border-neutral-800 px-2 py-1">COLD WASH ONLY</span>
-            <span className="border border-neutral-800 px-2 py-1">DO NOT BLEACH</span>
-            <span className="border border-neutral-800 px-2 py-1">FLAT DRY</span>
-            <span className="border border-neutral-800 px-2 py-1">IRON INSIDE OUT</span>
+            <span className="border border-neutral-800 px-3 py-1 rounded-full">COLD WASH ONLY</span>
+            <span className="border border-neutral-800 px-3 py-1 rounded-full">DO NOT BLEACH</span>
+            <span className="border border-neutral-800 px-3 py-1 rounded-full">FLAT DRY</span>
+            <span className="border border-neutral-800 px-3 py-1 rounded-full">IRON INSIDE OUT</span>
           </div>
         </div>
       ),

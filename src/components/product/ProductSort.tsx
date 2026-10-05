@@ -21,7 +21,7 @@ export const ProductSort: React.FC<ProductSortProps> = ({ currentSort, onSortCha
         <select
           value={currentSort}
           onChange={(e) => onSortChange(e.target.value as SortOption)}
-          className="bg-neutral-900 border border-neutral-800 text-white text-xs font-semibold uppercase tracking-wider py-2 px-3 pr-8 focus:outline-none focus:border-white transition-colors cursor-pointer rounded-none appearance-none"
+          className="bg-neutral-900 border border-neutral-800 text-white text-xs font-semibold uppercase tracking-wider py-2 px-3 pr-8 focus:outline-none focus:border-white transition-colors cursor-pointer rounded-xl appearance-none shadow-sm"
           aria-label="Sort products"
         >
           <option value="featured">Featured Drops</option>

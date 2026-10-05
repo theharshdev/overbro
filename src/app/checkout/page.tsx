@@ -10,7 +10,7 @@ import {
   ShieldCheck,
   CreditCard,
   QrCode,
-  Truck,
+  Landmark,
   Lock,
   ArrowRight,
   CheckCircle2,
@@ -70,14 +70,14 @@ export default function CheckoutPage() {
     phone: '9876543210',
     firstName: 'Harsh',
     lastName: 'Kushwaha',
-    address: 'Flat 402, Skyline Residency, Bandra West',
-    apartment: 'B-Wing, 4th Floor',
-    city: 'Mumbai',
-    state: 'Maharashtra',
-    pincode: '400050',
+    address: 'Plot 104, Saket',
+    apartment: 'South Delhi',
+    city: 'New Delhi',
+    state: 'Delhi',
+    pincode: '110017',
   });
 
-  const [paymentMethod, setPaymentMethod] = useState<'upi' | 'card' | 'cod'>('upi');
+  const [paymentMethod, setPaymentMethod] = useState<'upi' | 'card' | 'netbanking'>('upi');
   const [upiId, setUpiId] = useState('harsh@okhdfcbank');
 
   useEffect(() => {
@@ -123,7 +123,7 @@ export default function CheckoutPage() {
             ? 'UPI (Google Pay / PhonePe)'
             : paymentMethod === 'card'
             ? 'Credit / Debit Card'
-            : 'Cash on Delivery (COD)',
+            : 'NetBanking (All Major Banks)',
         shippingAddress: `${formData.firstName} ${formData.lastName}, ${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}`,
         phone: formData.phone,
         email: formData.email,
@@ -156,7 +156,7 @@ export default function CheckoutPage() {
         </p>
         <Link
           href="/shop"
-          className="inline-block bg-white text-neutral-950 px-6 py-2.5 text-xs font-bold uppercase tracking-wider"
+          className="inline-block bg-white text-neutral-950 px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl shadow-md"
         >
           GO TO SHOP
         </Link>
@@ -184,7 +184,7 @@ export default function CheckoutPage() {
           {/* Left Column: Customer & Delivery Details (7 Cols) */}
           <div className="lg:col-span-7 space-y-8">
             {/* Step 1: Contact Information */}
-            <div className="bg-neutral-950 border border-neutral-800 p-6 space-y-4">
+            <div className="bg-neutral-950 border border-neutral-800 rounded-3xl p-6 space-y-4 shadow-sm">
               <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
                 <h2 className="text-xs font-bold uppercase tracking-widest text-white flex items-center gap-2">
                   <span className="w-5 h-5 rounded-full bg-white text-neutral-950 text-[10px] font-bold flex items-center justify-center">
@@ -208,7 +208,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-neutral-900 border border-neutral-800 px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors"
                   />
                 </div>
                 <div>
@@ -216,7 +216,7 @@ export default function CheckoutPage() {
                     MOBILE NUMBER (FOR OTP/UPDATES) *
                   </label>
                   <div className="flex">
-                    <span className="bg-neutral-900 border border-r-0 border-neutral-800 px-3 py-2.5 text-xs text-neutral-400 font-mono flex items-center">
+                    <span className="bg-neutral-900 border border-r-0 border-neutral-800 rounded-l-xl px-3 py-2.5 text-xs text-neutral-400 font-mono flex items-center">
                       +91
                     </span>
                     <input
@@ -226,7 +226,7 @@ export default function CheckoutPage() {
                       maxLength={10}
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="flex-1 bg-neutral-900 border border-neutral-800 px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors font-mono"
+                      className="flex-1 bg-neutral-900 border border-neutral-800 rounded-r-xl px-3.5 py-2.5 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-white transition-colors font-mono"
                     />
                   </div>
                 </div>
@@ -234,7 +234,7 @@ export default function CheckoutPage() {
             </div>
 
             {/* Step 2: Shipping Address */}
-            <div className="bg-neutral-950 border border-neutral-800 p-6 space-y-4">
+            <div className="bg-neutral-950 border border-neutral-800 rounded-3xl p-6 space-y-4 shadow-sm">
               <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
                 <h2 className="text-xs font-bold uppercase tracking-widest text-white flex items-center gap-2">
                   <span className="w-5 h-5 rounded-full bg-white text-neutral-950 text-[10px] font-bold flex items-center justify-center">
@@ -258,7 +258,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full bg-neutral-900 border border-neutral-800 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white"
                   />
                 </div>
                 <div>
@@ -271,7 +271,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full bg-neutral-900 border border-neutral-800 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white"
                   />
                 </div>
               </div>
@@ -284,10 +284,10 @@ export default function CheckoutPage() {
                   type="text"
                   name="address"
                   required
-                  placeholder="e.g. Flat 402, Skyline Residency, Bandra West"
+                  placeholder="e.g. Plot 104, Saket, South Delhi"
                   value={formData.address}
                   onChange={handleInputChange}
-                  className="w-full bg-neutral-900 border border-neutral-800 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white"
+                  className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white"
                 />
               </div>
 
@@ -302,7 +302,7 @@ export default function CheckoutPage() {
                     required
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full bg-neutral-900 border border-neutral-800 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white"
                   />
                 </div>
 
@@ -314,7 +314,7 @@ export default function CheckoutPage() {
                     name="state"
                     value={formData.state}
                     onChange={handleInputChange}
-                    className="w-full bg-neutral-900 border border-neutral-800 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white cursor-pointer rounded-none"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-white cursor-pointer"
                   >
                     {INDIAN_STATES.map((st) => (
                       <option key={st} value={st}>
@@ -335,14 +335,14 @@ export default function CheckoutPage() {
                     maxLength={6}
                     value={formData.pincode}
                     onChange={handleInputChange}
-                    className="w-full bg-neutral-900 border border-neutral-800 px-3.5 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-white"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-3.5 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-white"
                   />
                 </div>
               </div>
             </div>
 
             {/* Step 3: Payment Method */}
-            <div className="bg-neutral-950 border border-neutral-800 p-6 space-y-4">
+            <div className="bg-neutral-950 border border-neutral-800 rounded-3xl p-6 space-y-4 shadow-sm">
               <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
                 <h2 className="text-xs font-bold uppercase tracking-widest text-white flex items-center gap-2">
                   <span className="w-5 h-5 rounded-full bg-white text-neutral-950 text-[10px] font-bold flex items-center justify-center">
@@ -360,7 +360,7 @@ export default function CheckoutPage() {
               <div className="space-y-3">
                 {/* UPI Option */}
                 <label
-                  className={`p-4 border block cursor-pointer transition-all ${
+                  className={`p-4 border rounded-2xl block cursor-pointer transition-all ${
                     paymentMethod === 'upi'
                       ? 'bg-neutral-900 border-white'
                       : 'bg-neutral-950 border-neutral-800 hover:border-neutral-700'
@@ -397,7 +397,7 @@ export default function CheckoutPage() {
                         value={upiId}
                         onChange={(e) => setUpiId(e.target.value)}
                         placeholder="yourname@okhdfcbank"
-                        className="w-full bg-neutral-950 border border-neutral-700 px-3 py-2 text-xs font-mono text-white focus:outline-none focus:border-white"
+                        className="w-full bg-neutral-950 border border-neutral-700 rounded-xl px-3 py-2 text-xs font-mono text-white focus:outline-none focus:border-white"
                       />
                     </div>
                   )}
@@ -405,7 +405,7 @@ export default function CheckoutPage() {
 
                 {/* Cards Option */}
                 <label
-                  className={`p-4 border block cursor-pointer transition-all ${
+                  className={`p-4 border rounded-2xl block cursor-pointer transition-all ${
                     paymentMethod === 'card'
                       ? 'bg-neutral-900 border-white'
                       : 'bg-neutral-950 border-neutral-800 hover:border-neutral-700'
@@ -433,10 +433,10 @@ export default function CheckoutPage() {
                   </div>
                 </label>
 
-                {/* Cash on Delivery */}
+                {/* NetBanking Option */}
                 <label
-                  className={`p-4 border block cursor-pointer transition-all ${
-                    paymentMethod === 'cod'
+                  className={`p-4 border rounded-2xl block cursor-pointer transition-all ${
+                    paymentMethod === 'netbanking'
                       ? 'bg-neutral-900 border-white'
                       : 'bg-neutral-950 border-neutral-800 hover:border-neutral-700'
                   }`}
@@ -446,20 +446,20 @@ export default function CheckoutPage() {
                       <input
                         type="radio"
                         name="payment"
-                        checked={paymentMethod === 'cod'}
-                        onChange={() => setPaymentMethod('cod')}
+                        checked={paymentMethod === 'netbanking'}
+                        onChange={() => setPaymentMethod('netbanking')}
                         className="accent-white"
                       />
                       <div>
                         <span className="text-xs font-bold uppercase tracking-wider text-white block">
-                          Cash on Delivery (COD)
+                          NetBanking
                         </span>
                         <span className="text-[10px] text-neutral-400">
-                          Pay cash or UPI upon delivery at your doorstep
+                          HDFC, ICICI, SBI, Axis, Kotak & 50+ Banks
                         </span>
                       </div>
                     </div>
-                    <Truck className="w-5 h-5 text-neutral-400" />
+                    <Landmark className="w-5 h-5 text-neutral-400" />
                   </div>
                 </label>
               </div>
@@ -468,7 +468,7 @@ export default function CheckoutPage() {
 
           {/* Right Column: Order Summary (5 Cols) */}
           <div className="lg:col-span-5 space-y-6 sticky top-24">
-            <div className="bg-neutral-950 border border-neutral-800 p-6 space-y-5">
+            <div className="bg-neutral-950 border border-neutral-800 rounded-3xl p-6 space-y-5 shadow-xl">
               <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
                 <h3 className="text-xs font-bold uppercase tracking-widest text-white">
                   ORDER SUMMARY ({count})
@@ -485,7 +485,7 @@ export default function CheckoutPage() {
               <div className="max-h-64 overflow-y-auto divide-y divide-neutral-900 pr-1">
                 {items.map((item) => (
                   <div key={item.id} className="py-3 flex gap-3 items-center">
-                    <div className="relative w-12 h-16 bg-neutral-900 flex-shrink-0 overflow-hidden border border-neutral-800">
+                    <div className="relative w-12 h-16 bg-neutral-900 rounded-xl flex-shrink-0 overflow-hidden border border-neutral-800">
                       <Image
                         src={item.image}
                         alt={item.name}
@@ -499,7 +499,7 @@ export default function CheckoutPage() {
                         {item.name}
                       </h4>
                       <span className="text-[10px] text-neutral-400 block font-mono">
-                        SIZE: {item.size} • QTY: {item.quantity} • {item.color}
+                        SIZE: {item.size} • QTY: {item.quantity}
                       </span>
                     </div>
                     <span className="text-xs font-mono font-bold text-white">
@@ -541,7 +541,7 @@ export default function CheckoutPage() {
               <button
                 type="submit"
                 disabled={isProcessing}
-                className="w-full bg-white text-neutral-950 py-4 text-xs font-black uppercase tracking-widest hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 select-none shadow-xl"
+                className="w-full bg-white text-neutral-950 py-4 text-xs font-black uppercase tracking-widest rounded-xl hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 select-none shadow-xl"
               >
                 {isProcessing ? (
                   <div className="flex items-center gap-2">

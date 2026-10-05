@@ -7,6 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
 import { ToastContainer } from '@/components/ui/Toast';
+import { ThemeProvider } from '@/components/layout/ThemeProvider';
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -16,11 +17,11 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'UBro — 250+ GSM Oversized T-Shirts',
+  title: 'Overbro — 250+ GSM Oversized T-Shirts',
   description:
-    'Discover UBro — premium 250+ GSM oversized T-shirts built for everyday comfort, architectural drape, and modern Indian streetwear. 100% combed cotton with custom drop shoulders.',
+    'Discover Overbro — premium 250+ GSM oversized T-shirts built for everyday comfort, architectural drape, and modern Indian streetwear. 100% combed cotton with custom drop shoulders.',
   keywords: [
-    'UBro',
+    'Overbro',
     'oversized t-shirts',
     '250+ GSM t-shirts',
     'heavyweight t-shirts',
@@ -30,13 +31,13 @@ export const metadata: Metadata = {
     'drop shoulder tees',
     'streetwear India',
   ],
-  authors: [{ name: 'UBro Streetwear' }],
+  authors: [{ name: 'Overbro Streetwear' }],
   openGraph: {
-    title: 'UBro — 250+ GSM Oversized T-Shirts',
+    title: 'Overbro — 250+ GSM Oversized T-Shirts',
     description:
-      'Discover UBro — premium 250+ GSM oversized T-shirts built for everyday comfort, architectural drape, and modern streetwear.',
-    url: 'https://ubro.in',
-    siteName: 'UBro Streetwear',
+      'Discover Overbro — premium 250+ GSM oversized T-shirts built for everyday comfort, architectural drape, and modern streetwear.',
+    url: 'https://overbro.in',
+    siteName: 'Overbro Streetwear',
     locale: 'en_IN',
     type: 'website',
   },
@@ -54,15 +55,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={plusJakartaSans.variable}>
-      <body className="bg-neutral-950 text-neutral-100 min-h-screen flex flex-col font-sans antialiased selection:bg-neutral-200 selection:text-neutral-950">
-        <AnnouncementBar />
-        <Navbar />
-        <main className="flex-1 w-full">{children}</main>
-        <Footer />
-        <CartDrawer />
-        <SearchOverlay />
-        <ToastContainer />
+    <html lang="en" className={plusJakartaSans.variable} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('ubro-theme');
+                  if (stored) {
+                    var parsed = JSON.parse(stored);
+                    if (parsed.state && parsed.state.theme === 'light') {
+                      document.documentElement.classList.add('light');
+                      document.documentElement.setAttribute('data-theme', 'light');
+                    }
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body suppressHydrationWarning className="bg-neutral-950 text-neutral-100 min-h-screen flex flex-col font-sans antialiased selection:bg-neutral-200 selection:text-neutral-950">
+        <ThemeProvider>
+          <AnnouncementBar />
+          <Navbar />
+          <main className="flex-1 w-full">{children}</main>
+          <Footer />
+          <CartDrawer />
+          <SearchOverlay />
+          <ToastContainer />
+        </ThemeProvider>
       </body>
     </html>
   );

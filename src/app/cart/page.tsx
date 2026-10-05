@@ -85,7 +85,7 @@ export default function CartPage() {
       </div>
 
       {items.length === 0 ? (
-        <div className="py-24 text-center border border-neutral-800 bg-neutral-900/30 p-8 max-w-xl mx-auto space-y-4">
+        <div className="py-24 text-center border border-neutral-800 bg-neutral-900/30 p-8 max-w-xl mx-auto space-y-4 rounded-3xl">
           <div className="w-16 h-16 border border-neutral-800 rounded-full flex items-center justify-center mx-auto bg-neutral-900 text-neutral-400">
             <ShoppingBag className="w-7 h-7" />
           </div>
@@ -98,7 +98,7 @@ export default function CartPage() {
           <div className="pt-2">
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 bg-white text-neutral-950 px-8 py-3 text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-neutral-950 px-8 py-3 text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-colors rounded-xl shadow-md"
             >
               <span>SHOP NEW DROPS</span>
               <ArrowRight className="w-4 h-4" />
@@ -113,7 +113,7 @@ export default function CartPage() {
             <FreeShippingProgress subtotal={subtotal} />
 
             {/* Items List */}
-            <div className="bg-neutral-950 border border-neutral-800 p-4 sm:p-6 divide-y divide-neutral-900">
+            <div className="bg-neutral-950 border border-neutral-800 p-4 sm:p-6 divide-y divide-neutral-900 rounded-3xl shadow-sm">
               {items.map((item) => (
                 <CartItemComponent
                   key={item.id}
@@ -126,7 +126,7 @@ export default function CartPage() {
 
             {/* Reassurance banner */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="p-4 bg-neutral-900/60 border border-neutral-800 text-xs">
+              <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-2xl text-xs">
                 <span className="font-bold text-white block uppercase tracking-wider">
                   DISPATCH IN 24H
                 </span>
@@ -134,7 +134,7 @@ export default function CartPage() {
                   Express delivery with live tracking SMS
                 </span>
               </div>
-              <div className="p-4 bg-neutral-900/60 border border-neutral-800 text-xs">
+              <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-2xl text-xs">
                 <span className="font-bold text-white block uppercase tracking-wider">
                   7-DAY FREE EXCHANGES
                 </span>
@@ -142,7 +142,7 @@ export default function CartPage() {
                   Instant size exchange pickup
                 </span>
               </div>
-              <div className="p-4 bg-neutral-900/60 border border-neutral-800 text-xs">
+              <div className="p-4 bg-neutral-900/60 border border-neutral-800 rounded-2xl text-xs">
                 <span className="font-bold text-white block uppercase tracking-wider">
                   100% COMBED COTTON
                 </span>
@@ -156,14 +156,14 @@ export default function CartPage() {
           {/* Right Column: Order Summary & Coupon (4 Cols) */}
           <div className="lg:col-span-4 space-y-6 sticky top-24">
             {/* Coupon Code Card */}
-            <div className="bg-neutral-950 border border-neutral-800 p-5 space-y-3">
+            <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-5 space-y-3 shadow-sm">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white">
                 <Tag className="w-4 h-4 text-neutral-400" />
                 <span>PROMO & COUPON CODE</span>
               </div>
 
               {coupon ? (
-                <div className="p-3 bg-neutral-900 border border-neutral-800 flex items-center justify-between">
+                <div className="p-3 bg-neutral-900 border border-neutral-800 rounded-xl flex items-center justify-between">
                   <div>
                     <span className="text-xs font-mono font-bold text-emerald-400">
                       {coupon.code}
@@ -188,11 +188,11 @@ export default function CartPage() {
                       value={couponCode}
                       onChange={(e) => setCouponCode(e.target.value)}
                       placeholder="e.g. UBRO10 or FIRSTDROP"
-                      className="flex-1 bg-neutral-900 border border-neutral-800 px-3 py-2 text-xs font-mono uppercase text-white placeholder-neutral-500 focus:outline-none focus:border-white"
+                      className="flex-1 bg-neutral-900 border border-neutral-800 rounded-l-xl px-3.5 py-2.5 text-xs font-mono uppercase text-white placeholder-neutral-500 focus:outline-none focus:border-white"
                     />
                     <button
                       type="submit"
-                      className="bg-white text-neutral-950 text-xs font-bold uppercase tracking-wider px-4 py-2 hover:bg-neutral-200 transition-colors"
+                      className="bg-white text-neutral-950 text-xs font-bold uppercase tracking-wider rounded-r-xl px-4 py-2.5 hover:bg-neutral-200 transition-colors"
                     >
                       APPLY
                     </button>
@@ -210,7 +210,7 @@ export default function CartPage() {
             </div>
 
             {/* Price Summary Card */}
-            <div className="bg-neutral-950 border border-neutral-800 p-5 space-y-4">
+            <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-5 space-y-4 shadow-sm">
               <h3 className="text-xs font-bold uppercase tracking-widest text-white pb-3 border-b border-neutral-800">
                 PRICE BREAKDOWN
               </h3>
@@ -254,7 +254,7 @@ export default function CartPage() {
               <button
                 type="button"
                 onClick={() => router.push('/checkout')}
-                className="w-full bg-white text-neutral-950 py-4 text-xs font-black uppercase tracking-widest hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-white text-neutral-950 py-4 text-xs font-black uppercase tracking-widest rounded-xl hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 shadow-lg"
               >
                 <Lock className="w-4 h-4" />
                 <span>CHECKOUT • ₹{total.toLocaleString('en-IN')}</span>

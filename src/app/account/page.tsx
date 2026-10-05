@@ -17,7 +17,7 @@ import {
   Shield,
 } from 'lucide-react';
 import { useWishlistStore } from '@/store/useWishlistStore';
-import { PRODUCTS } from '@/data/products';
+import { PRODUCTS, SINGLE_TSHIRT_IMAGE } from '@/data/products';
 
 export default function AccountPage() {
   const [activeTab, setActiveTab] = useState<'orders' | 'addresses' | 'profile' | 'wishlist'>('orders');
@@ -46,7 +46,7 @@ export default function AccountPage() {
                 color: 'Jet Black',
                 price: 899,
                 quantity: 1,
-                image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop',
+                image: SINGLE_TSHIRT_IMAGE,
               },
               {
                 name: 'UBro Monolith 320 GSM Ultra-Heavy Tee',
@@ -54,10 +54,10 @@ export default function AccountPage() {
                 color: 'Pure Obsidian',
                 price: 1199,
                 quantity: 1,
-                image: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1200&auto=format&fit=crop',
+                image: SINGLE_TSHIRT_IMAGE,
               },
             ],
-            shippingAddress: 'Harsh Kushwaha, Flat 402, Skyline Residency, Bandra West, Mumbai, Maharashtra - 400050',
+            shippingAddress: 'Harsh Kushwaha, Plot 104, Saket, South Delhi, Delhi - 110017',
             paymentMethod: 'UPI (PhonePe)',
           },
         ]);
@@ -91,7 +91,7 @@ export default function AccountPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Navigation Sidebar (3 Cols) */}
-        <div className="lg:col-span-3 bg-neutral-950 border border-neutral-800 divide-y divide-neutral-900 select-none">
+        <div className="lg:col-span-3 bg-neutral-950 border border-neutral-800 rounded-3xl overflow-hidden divide-y divide-neutral-900 select-none shadow-xl">
           <button
             type="button"
             onClick={() => setActiveTab('orders')}
@@ -183,14 +183,14 @@ export default function AccountPage() {
               </div>
 
               {orders.length === 0 ? (
-                <div className="p-12 text-center border border-neutral-800 bg-neutral-900/30 space-y-3">
+                <div className="p-12 text-center border border-neutral-800 bg-neutral-900/30 space-y-3 rounded-3xl">
                   <Package className="w-8 h-8 text-neutral-500 mx-auto" />
                   <p className="text-xs font-bold uppercase tracking-wider text-white">
                     NO ORDERS YET
                   </p>
                   <Link
                     href="/shop"
-                    className="inline-block mt-2 bg-white text-neutral-950 px-6 py-2.5 text-xs font-bold uppercase tracking-wider"
+                    className="inline-block mt-2 bg-white text-neutral-950 px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl shadow-md"
                   >
                     SHOP NEW DROPS
                   </Link>
@@ -200,7 +200,7 @@ export default function AccountPage() {
                   {orders.map((order, idx) => (
                     <div
                       key={idx}
-                      className="bg-neutral-950 border border-neutral-800 p-5 space-y-4"
+                      className="bg-neutral-950 border border-neutral-800 p-5 space-y-4 rounded-3xl shadow-lg"
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-neutral-800 gap-2">
                         <div>
@@ -213,7 +213,7 @@ export default function AccountPage() {
                         </div>
 
                         <div className="flex items-center gap-3">
-                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider bg-neutral-900 border border-neutral-700 text-neutral-200">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-neutral-900 border border-neutral-700 text-neutral-200 rounded-full">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                             {order.status || 'Processing Dispatch'}
                           </span>
@@ -229,7 +229,7 @@ export default function AccountPage() {
                           <div key={i} className="py-2.5 flex items-center justify-between gap-3">
                             <div className="flex items-center gap-3">
                               {item.image && (
-                                <div className="relative w-12 h-14 bg-neutral-900 overflow-hidden border border-neutral-800 flex-shrink-0">
+                                <div className="relative w-12 h-14 bg-neutral-900 overflow-hidden border border-neutral-800 flex-shrink-0 rounded-xl">
                                   <Image
                                     src={item.image}
                                     alt={item.name}
@@ -242,7 +242,7 @@ export default function AccountPage() {
                               <div>
                                 <h4 className="text-xs font-bold text-white uppercase">{item.name}</h4>
                                 <span className="text-[10px] text-neutral-400 font-mono">
-                                  SIZE: {item.size} • QTY: {item.quantity} • {item.color}
+                                  SIZE: {item.size} • QTY: {item.quantity}
                                 </span>
                               </div>
                             </div>
@@ -286,14 +286,14 @@ export default function AccountPage() {
               </div>
 
               {wishlistItems.length === 0 ? (
-                <div className="p-12 text-center border border-neutral-800 bg-neutral-900/30 space-y-3">
+                <div className="p-12 text-center border border-neutral-800 bg-neutral-900/30 space-y-3 rounded-3xl">
                   <Heart className="w-8 h-8 text-neutral-500 mx-auto" />
                   <p className="text-xs font-bold uppercase tracking-wider text-white">
                     NO SAVED PIECES
                   </p>
                   <Link
                     href="/shop"
-                    className="inline-block mt-2 bg-white text-neutral-950 px-6 py-2.5 text-xs font-bold uppercase tracking-wider"
+                    className="inline-block mt-2 bg-white text-neutral-950 px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl shadow-md"
                   >
                     EXPLORE DROPS
                   </Link>
@@ -303,9 +303,9 @@ export default function AccountPage() {
                   {wishlistItems.map((prod) => (
                     <div
                       key={prod.id}
-                      className="p-4 bg-neutral-950 border border-neutral-800 flex gap-3 items-center"
+                      className="p-4 bg-neutral-950 border border-neutral-800 flex gap-3 items-center rounded-2xl shadow-md"
                     >
-                      <div className="relative w-16 h-20 bg-neutral-900 flex-shrink-0 border border-neutral-800 overflow-hidden">
+                      <div className="relative w-16 h-20 bg-neutral-900 flex-shrink-0 border border-neutral-800 overflow-hidden rounded-xl">
                         <Image
                           src={prod.images[0]}
                           alt={prod.name}
@@ -351,9 +351,9 @@ export default function AccountPage() {
                 </button>
               </div>
 
-              <div className="p-6 bg-neutral-950 border border-neutral-800 space-y-3 max-w-md">
+              <div className="p-6 bg-neutral-950 border border-neutral-800 space-y-3 max-w-md rounded-3xl shadow-lg">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold bg-neutral-900 border border-neutral-700 px-2 py-0.5 text-neutral-200 uppercase font-mono">
+                  <span className="text-[10px] font-bold bg-neutral-900 border border-neutral-700 px-2.5 py-0.5 text-neutral-200 uppercase font-mono rounded-full">
                     DEFAULT ADDRESS
                   </span>
                   <span className="text-xs text-neutral-400 font-bold uppercase">HOME</span>
@@ -362,8 +362,8 @@ export default function AccountPage() {
                   Harsh Kushwaha • +91 9876543210
                 </h4>
                 <p className="text-xs text-neutral-400 leading-relaxed">
-                  Flat 402, Skyline Residency, B-Wing, 4th Floor<br />
-                  Bandra West, Mumbai, Maharashtra - 400050
+                  Plot 104, Saket, South Delhi<br />
+                  New Delhi, Delhi - 110017
                 </p>
                 <div className="pt-2 flex gap-4 text-xs font-bold uppercase text-neutral-400">
                   <button type="button" className="hover:text-white transition-colors">EDIT</button>
@@ -382,7 +382,7 @@ export default function AccountPage() {
                 </h2>
               </div>
 
-              <div className="bg-neutral-950 border border-neutral-800 p-6 space-y-4 max-w-lg">
+              <div className="bg-neutral-950 border border-neutral-800 p-6 space-y-4 max-w-lg rounded-3xl shadow-lg">
                 <div>
                   <label className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 block mb-1">
                     FULL NAME
@@ -390,7 +390,7 @@ export default function AccountPage() {
                   <input
                     type="text"
                     defaultValue="Harsh Kushwaha"
-                    className="w-full bg-neutral-900 border border-neutral-800 p-2.5 text-xs text-white focus:outline-none focus:border-white"
+                    className="w-full bg-neutral-900 border border-neutral-800 p-3 text-xs text-white focus:outline-none focus:border-white rounded-xl"
                   />
                 </div>
 
@@ -401,7 +401,7 @@ export default function AccountPage() {
                   <input
                     type="email"
                     defaultValue="harsh.streetwear@example.com"
-                    className="w-full bg-neutral-900 border border-neutral-800 p-2.5 text-xs text-white focus:outline-none focus:border-white"
+                    className="w-full bg-neutral-900 border border-neutral-800 p-3 text-xs text-white focus:outline-none focus:border-white rounded-xl"
                   />
                 </div>
 
@@ -412,7 +412,7 @@ export default function AccountPage() {
                   <input
                     type="tel"
                     defaultValue="+91 9876543210"
-                    className="w-full bg-neutral-900 border border-neutral-800 p-2.5 text-xs text-white focus:outline-none focus:border-white font-mono"
+                    className="w-full bg-neutral-900 border border-neutral-800 p-3 text-xs text-white focus:outline-none focus:border-white font-mono rounded-xl"
                   />
                 </div>
 
@@ -420,7 +420,7 @@ export default function AccountPage() {
                   <button
                     type="button"
                     onClick={() => alert('Profile preferences saved!')}
-                    className="bg-white text-neutral-950 px-6 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-colors"
+                    className="bg-white text-neutral-950 px-6 py-2.5 text-xs font-bold uppercase tracking-wider hover:bg-neutral-200 transition-colors rounded-xl shadow-md"
                   >
                     SAVE CHANGES
                   </button>

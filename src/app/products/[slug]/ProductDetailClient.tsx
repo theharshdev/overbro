@@ -6,7 +6,6 @@ import { Product, ProductSize } from '@/types/product';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { ProductGallery } from '@/components/product/ProductGallery';
 import { SizeSelector } from '@/components/product/SizeSelector';
-import { ColorSelector } from '@/components/product/ColorSelector';
 import { QuantitySelector } from '@/components/cart/QuantitySelector';
 import { ProductAccordion } from '@/components/product/ProductAccordion';
 import { SizeGuideModal } from '@/components/product/SizeGuideModal';
@@ -20,7 +19,6 @@ import {
   Truck,
   RotateCcw,
   ShieldCheck,
-  Star,
   Sparkles,
 } from 'lucide-react';
 
@@ -42,15 +40,12 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
     product.sizes.find((s) => s.inStock)?.size || product.sizes[0].size;
 
   const [selectedSize, setSelectedSize] = useState<ProductSize>(firstInStockSize);
-  const [selectedColor, setSelectedColor] = useState<string>(
-    product.colors[0]?.name || ''
-  );
   const [quantity, setQuantity] = useState<number>(1);
   const [sizeGuideOpen, setSizeGuideOpen] = useState<boolean>(false);
   const [isAdding, setIsAdding] = useState<boolean>(false);
 
-  const activeColorObj =
-    product.colors.find((c) => c.name === selectedColor) || product.colors[0];
+  const defaultColor =
+    product.colors[0] || { name: 'Standard', hex: '#000000' };
 
   const currentSizeOption = product.sizes.find((s) => s.size === selectedSize);
   const maxStock = currentSizeOption ? currentSizeOption.stockCount : 10;
@@ -62,8 +57,8 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
     addItem(
       product,
       selectedSize,
-      activeColorObj.name,
-      activeColorObj.hex,
+      defaultColor.name,
+      defaultColor.hex,
       quantity
     );
     addToast(
@@ -79,8 +74,8 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
     addItem(
       product,
       selectedSize,
-      activeColorObj.name,
-      activeColorObj.hex,
+      defaultColor.name,
+      defaultColor.hex,
       quantity
     );
     router.push('/checkout');
@@ -127,24 +122,8 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
               {product.subtitle}
             </p>
 
-            {/* Ratings & Reviews */}
-            <div className="flex items-center gap-3 pt-1">
-              <div className="flex items-center text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
-                ))}
-              </div>
-              <span className="text-xs font-mono font-bold text-white">
-                {product.rating}
-              </span>
-              <span className="text-neutral-600">•</span>
-              <span className="text-xs text-neutral-400 underline underline-offset-4">
-                {product.reviewCount} Verified Reviews
-              </span>
-            </div>
-
             {/* Price block */}
-            <div className="flex items-baseline gap-3 pt-3">
+            <div className="flex items-baseline gap-3 pt-3 flex-wrap">
               <span className="text-2xl sm:text-3xl font-extrabold font-mono text-white">
                 ₹{product.price.toLocaleString('en-IN')}
               </span>
@@ -153,8 +132,18 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
                   ₹{product.originalPrice.toLocaleString('en-IN')}
                 </span>
               )}
+              <span
+                data-badge="sale"
+                className="sale-badge text-xs font-black uppercase tracking-widest bg-red-600 px-3 py-0.5 shadow-sm rounded-full text-[#ffffff]"
+                style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff' }}
+              >
+                SALE
+              </span>
               {product.discountPercentage && (
-                <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-900/60 px-2 py-0.5">
+                <span
+                  data-badge="save"
+                  className="save-badge text-xs font-mono font-bold px-3 py-0.5 rounded-full inline-flex items-center tracking-tight"
+                >
                   SAVE {product.discountPercentage}%
                 </span>
               )}
@@ -163,13 +152,6 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
               Inclusive of all taxes. Free shipping applied at checkout on orders over ₹999.
             </span>
           </div>
-
-          {/* Color Selector */}
-          <ColorSelector
-            colors={product.colors}
-            selectedColor={selectedColor}
-            onSelectColor={setSelectedColor}
-          />
 
           {/* Size Selector */}
           <SizeSelector
@@ -200,7 +182,7 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
                 type="button"
                 disabled={isOutOfStock}
                 onClick={handleAddToCart}
-                className={`py-4 px-6 text-xs font-black uppercase tracking-widest transition-all flex items-center justify-center gap-2 border select-none ${
+                className={`py-4 px-6 text-xs font-black uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 border select-none ${
                   isOutOfStock
                     ? 'bg-neutral-900 border-neutral-800 text-neutral-600 cursor-not-allowed'
                     : isAdding
@@ -216,7 +198,7 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
                 type="button"
                 disabled={isOutOfStock}
                 onClick={handleBuyNow}
-                className={`py-4 px-6 text-xs font-black uppercase tracking-widest transition-all flex items-center justify-center gap-2 border select-none ${
+                className={`py-4 px-6 text-xs font-black uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 border select-none ${
                   isOutOfStock
                     ? 'bg-neutral-950 border-neutral-900 text-neutral-600 cursor-not-allowed'
                     : 'bg-neutral-900 border-neutral-700 text-white hover:bg-neutral-800 hover:border-white'
@@ -234,13 +216,13 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
                 productName={product.name}
                 size="md"
                 showText={true}
-                className="w-full py-3 bg-neutral-900/60 border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-700"
+                className="w-full py-3 bg-neutral-900/60 border border-neutral-800 rounded-xl text-neutral-300 hover:text-white hover:border-neutral-700"
               />
             </div>
           </div>
 
           {/* Quick Perks Strip */}
-          <div className="grid grid-cols-3 gap-2 py-4 border-y border-neutral-900 text-center">
+          <div className="grid grid-cols-3 gap-2 py-4 px-3 bg-neutral-900/40 border border-neutral-800/80 rounded-2xl text-center">
             <div className="p-2 space-y-1">
               <Truck className="w-4 h-4 text-neutral-400 mx-auto" />
               <span className="text-[10px] font-bold text-white uppercase tracking-wider block">
@@ -258,9 +240,9 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
             <div className="p-2 space-y-1">
               <ShieldCheck className="w-4 h-4 text-neutral-400 mx-auto" />
               <span className="text-[10px] font-bold text-white uppercase tracking-wider block">
-                CASH ON DELIVERY
+                SECURE PAYMENTS
               </span>
-              <span className="text-[9px] text-neutral-400 block">Available nationwide</span>
+              <span className="text-[9px] text-neutral-400 block">UPI • Cards • NetBanking</span>
             </div>
           </div>
 

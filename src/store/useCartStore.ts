@@ -12,8 +12,14 @@ export interface Coupon {
 }
 
 export const VALID_COUPONS: Record<string, Coupon> = {
+  OVERBRO10: {
+    code: 'OVERBRO10',
+    type: 'percentage',
+    value: 10,
+    description: '10% OFF on all oversized drops',
+  },
   UBRO10: {
-    code: 'UBRO10',
+    code: 'OVERBRO10',
     type: 'percentage',
     value: 10,
     description: '10% OFF on all oversized drops',
@@ -132,7 +138,7 @@ export const useCartStore = create<CartState>()(
         const validCoupon = VALID_COUPONS[normalized];
 
         if (!validCoupon) {
-          set({ couponError: 'Invalid promo code. Try "UBRO10" or "FIRSTDROP"' });
+          set({ couponError: 'Invalid promo code. Try "OVERBRO10" or "FIRSTDROP"' });
           return false;
         }
 
@@ -192,7 +198,7 @@ export const useCartStore = create<CartState>()(
       },
     }),
     {
-      name: 'ubro-cart-storage',
+      name: 'overbro-cart-storage',
       partialize: (state) => ({ items: state.items, coupon: state.coupon }),
     }
   )

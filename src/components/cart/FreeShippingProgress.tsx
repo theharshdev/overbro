@@ -14,7 +14,7 @@ export const FreeShippingProgress: React.FC<FreeShippingProgressProps> = ({ subt
   const percentage = Math.min(100, Math.round((subtotal / FREE_SHIPPING_THRESHOLD) * 100));
 
   return (
-    <div className="bg-neutral-900/90 border border-neutral-800 p-3.5 space-y-2 select-none">
+    <div className="bg-neutral-900/90 border border-neutral-800 p-3.5 space-y-2 select-none rounded-2xl">
       <div className="flex items-center justify-between text-xs">
         <div className="flex items-center gap-2">
           {isUnlocked ? (
@@ -36,9 +36,9 @@ export const FreeShippingProgress: React.FC<FreeShippingProgressProps> = ({ subt
       </div>
 
       {/* Progress Bar Container */}
-      <div className="w-full h-1.5 bg-neutral-800 rounded-none overflow-hidden relative">
+      <div className="w-full h-2 bg-neutral-800 rounded-full overflow-hidden relative">
         <div
-          className={`h-full transition-all duration-500 ease-out ${
+          className={`h-full rounded-full transition-all duration-500 ease-out ${
             isUnlocked ? 'bg-emerald-400' : 'bg-white'
           }`}
           style={{ width: `${percentage}%` }}

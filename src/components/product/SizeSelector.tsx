@@ -55,9 +55,9 @@ export const SizeSelector: React.FC<SizeSelectorProps> = ({
               type="button"
               disabled={isOutOfStock}
               onClick={() => onSelectSize(item.size)}
-              className={`h-12 border text-xs font-bold font-mono tracking-wider uppercase transition-all duration-150 flex flex-col items-center justify-center relative ${
+              className={`h-12 border text-xs font-bold font-mono tracking-wider uppercase rounded-xl transition-all duration-150 flex flex-col items-center justify-center relative ${
                 isSelected
-                  ? 'bg-white text-neutral-950 border-white ring-1 ring-white'
+                  ? 'bg-white text-neutral-950 border-white ring-2 ring-white'
                   : isOutOfStock
                   ? 'bg-neutral-950 border-neutral-900 text-neutral-600 cursor-not-allowed'
                   : 'bg-neutral-900 border-neutral-800 text-white hover:border-neutral-600'

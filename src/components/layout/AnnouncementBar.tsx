@@ -19,7 +19,7 @@ export const AnnouncementBar: React.FC = () => {
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-white font-semibold">FREE SHIPPING ON ORDERS ABOVE ₹999</span>
           <span className="hidden sm:inline text-neutral-500">•</span>
-          <span className="hidden sm:inline text-neutral-400">USE CODE <strong className="text-white">UBRO10</strong> FOR 10% OFF</span>
+          <span className="hidden sm:inline text-neutral-400">USE CODE <strong className="text-white">OVERBRO10</strong> FOR 10% OFF</span>
         </div>
 
         {/* Right CTA */}

@@ -22,7 +22,7 @@ export const QuantitySelector: React.FC<QuantitySelectorProps> = ({
   const isLg = size === 'lg';
 
   return (
-    <div className="inline-flex items-center border border-neutral-800 bg-neutral-900 select-none">
+    <div className="inline-flex items-center border border-neutral-800 bg-neutral-900 rounded-full overflow-hidden select-none px-1">
       <button
         type="button"
         onClick={onDecrease}

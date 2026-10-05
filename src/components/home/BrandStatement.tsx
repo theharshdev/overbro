@@ -8,7 +8,7 @@ export const BrandStatement: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-900 border border-neutral-800 text-[11px] font-mono uppercase tracking-[0.25em] text-neutral-400">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-neutral-900 border border-neutral-800 rounded-full text-[11px] font-mono uppercase tracking-[0.25em] text-neutral-400">
             <span className="w-1.5 h-1.5 rounded-full bg-white" />
             <span>THE SILHOUETTE MANIFESTO</span>
           </div>
@@ -20,25 +20,25 @@ export const BrandStatement: React.FC = () => {
 
           {/* Core Story Paragraph */}
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
-            Most brands make standard T-shirts and simply label them "oversized" by increasing the size tag. That results in awkward necklines, baggy midsections, and sloppy lengths. At <strong>UBro</strong>, we start from zero: bespoke drop-shoulder geometry, tightened rib collars that never stretch out, and dense 250 to 320 GSM cotton that drapes with architectural authority.
+            Most brands make standard T-shirts and simply label them "oversized" by increasing the size tag. That results in awkward necklines, baggy midsections, and sloppy lengths. At <strong>Overbro</strong>, we start from zero: bespoke drop-shoulder geometry, tightened rib collars that never stretch out, and dense 250 to 320 GSM cotton that drapes with architectural authority.
           </p>
 
           {/* Feature Grid / Pillar Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-left">
-            <div className="p-6 bg-neutral-950 border border-neutral-800/80 space-y-3">
-              <div className="w-10 h-10 bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white">
+            <div className="p-6 bg-neutral-950 border border-neutral-800/80 rounded-3xl space-y-3 shadow-sm">
+              <div className="w-10 h-10 bg-neutral-900 border border-neutral-800 rounded-xl flex items-center justify-center text-white">
                 <Layers className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold uppercase tracking-wider text-white">
                 250+ GSM HEAVYWEIGHT
               </h3>
               <p className="text-xs text-neutral-400 leading-relaxed">
-                We never use lightweight 160–180 GSM cotton. Every UBro tee starts at 250 GSM and scales to 320 GSM armor cotton. Weight gives the silhouette its architectural drape and zero cling.
+                We never use lightweight 160–180 GSM cotton. Every Overbro tee starts at 250 GSM and scales to 320 GSM armor cotton. Weight gives the silhouette its architectural drape and zero cling.
               </p>
             </div>
 
-            <div className="p-6 bg-neutral-950 border border-neutral-800/80 space-y-3">
-              <div className="w-10 h-10 bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white">
+            <div className="p-6 bg-neutral-950 border border-neutral-800/80 rounded-3xl space-y-3 shadow-sm">
+              <div className="w-10 h-10 bg-neutral-900 border border-neutral-800 rounded-xl flex items-center justify-center text-white">
                 <Feather className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold uppercase tracking-wider text-white">
@@ -49,8 +49,8 @@ export const BrandStatement: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 bg-neutral-950 border border-neutral-800/80 space-y-3">
-              <div className="w-10 h-10 bg-neutral-900 border border-neutral-800 flex items-center justify-center text-white">
+            <div className="p-6 bg-neutral-950 border border-neutral-800/80 rounded-3xl space-y-3 shadow-sm">
+              <div className="w-10 h-10 bg-neutral-900 border border-neutral-800 rounded-xl flex items-center justify-center text-white">
                 <Sparkles className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold uppercase tracking-wider text-white">
@@ -68,7 +68,7 @@ export const BrandStatement: React.FC = () => {
               href="/about"
               className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white border-b-2 border-white pb-1 hover:text-neutral-300 hover:border-neutral-300 transition-colors"
             >
-              <span>READ THE COMPLETE UBRO STORY</span>
+              <span>READ THE COMPLETE OVERBRO STORY</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

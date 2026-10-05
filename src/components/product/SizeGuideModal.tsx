@@ -54,7 +54,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({
       />
 
       <div className="relative min-h-screen flex items-center justify-center p-4">
-        <div className="relative w-full max-w-2xl bg-neutral-950 border border-neutral-800 p-6 sm:p-8 shadow-2xl text-white">
+        <div className="relative w-full max-w-2xl bg-neutral-950 border border-neutral-800 p-6 sm:p-8 shadow-2xl text-white rounded-3xl overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between pb-4 border-b border-neutral-800">
             <div className="flex items-center gap-2">
@@ -66,7 +66,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({
             <button
               type="button"
               onClick={onClose}
-              className="p-1.5 text-neutral-400 hover:text-white transition-colors"
+              className="p-1.5 text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-neutral-900"
               aria-label="Close size guide"
             >
               <X className="w-5 h-5" />
@@ -74,7 +74,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({
           </div>
 
           {/* Fit Manifesto Note */}
-          <div className="mt-4 p-3.5 bg-neutral-900 border border-neutral-800 flex items-start gap-3 text-xs">
+          <div className="mt-4 p-4 bg-neutral-900 border border-neutral-800 flex items-start gap-3 text-xs rounded-2xl">
             <Info className="w-4 h-4 text-neutral-400 flex-shrink-0 mt-0.5" />
             <div className="text-neutral-300 space-y-1">
               <p className="font-semibold text-white uppercase tracking-wider">
@@ -87,7 +87,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({
           </div>
 
           {/* Sizing Table */}
-          <div className="mt-6 overflow-x-auto">
+          <div className="mt-6 overflow-x-auto rounded-2xl border border-neutral-900">
             <table className="w-full text-left text-xs">
               <thead>
                 <tr className="border-b border-neutral-800 text-[10px] text-neutral-400 uppercase tracking-widest font-mono">
@@ -122,7 +122,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="w-full mt-6 bg-white text-neutral-950 font-bold uppercase tracking-wider py-3 text-xs hover:bg-neutral-200 transition-colors"
+            className="w-full mt-6 bg-white text-neutral-950 font-bold uppercase tracking-wider py-3 text-xs hover:bg-neutral-200 transition-colors rounded-xl shadow-md"
           >
             GOT IT, RETURN TO PRODUCT
           </button>

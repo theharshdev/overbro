@@ -2,14 +2,25 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Sparkles, Shield, Flame } from 'lucide-react';
+import { SINGLE_TSHIRT_IMAGE } from '@/data/products';
 
 export const Hero: React.FC = () => {
   return (
     <section className="relative w-full bg-neutral-950 text-white overflow-hidden border-b border-neutral-800">
-      {/* Background Graphic Accents */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-neutral-700 rounded-full blur-[140px]" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-neutral-800 rounded-full blur-[140px]" />
+      {/* Background Streetwear Imagery with Cinematic Overlays */}
+      <div className="absolute inset-0 z-0 select-none">
+        <Image
+          src="/hero-bg.jpg"
+          alt="Overbro Urban Streetwear Heritage"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Dark Vignette & Gradient Overlays for crisp readability */}
+        <div className="absolute inset-0 bg-neutral-950/80 sm:bg-neutral-950/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/85 to-neutral-950/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950/50" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
@@ -17,7 +28,7 @@ export const Hero: React.FC = () => {
           {/* Left Text Column (7 cols) */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-neutral-900 border border-neutral-800 text-neutral-300 text-[11px] font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-950/80 backdrop-blur-md border border-neutral-700/80 text-neutral-300 text-[11px] font-bold uppercase tracking-widest rounded-full shadow-lg">
               <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               <span>INDIAN OVERSIZED STREETWEAR HOUSE</span>
               <span className="text-neutral-600">•</span>
@@ -43,7 +54,7 @@ export const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
               <Link
                 href="/t-shirts"
-                className="bg-white text-neutral-950 px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-neutral-200 transition-all text-center flex items-center justify-center gap-2 group shadow-xl"
+                className="bg-white text-neutral-950 px-8 py-4 text-xs font-black uppercase tracking-widest rounded-xl hover:bg-neutral-200 transition-all text-center flex items-center justify-center gap-2 group shadow-xl"
               >
                 <span>SHOP OVERSIZED TEES</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -51,7 +62,7 @@ export const Hero: React.FC = () => {
 
               <Link
                 href="/shop?collection=heavyweight"
-                className="bg-neutral-900 border border-neutral-700 text-white px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-neutral-800 hover:border-neutral-500 transition-all text-center flex items-center justify-center gap-2 group"
+                className="bg-neutral-900 border border-neutral-700 text-white px-8 py-4 text-xs font-black uppercase tracking-widest rounded-xl hover:bg-neutral-800 hover:border-neutral-500 transition-all text-center flex items-center justify-center gap-2 group"
               >
                 <span>HEAVYWEIGHT 280–320 GSM</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -89,10 +100,10 @@ export const Hero: React.FC = () => {
 
           {/* Right Editorial Fashion Imagery Column (5 cols) */}
           <div className="lg:col-span-5 relative">
-            <div className="relative aspect-[3/4] w-full max-w-md mx-auto bg-neutral-900 border border-neutral-800 shadow-2xl group overflow-hidden">
+            <div className="relative aspect-[3/4] w-full max-w-md mx-auto bg-neutral-900 border border-neutral-800 rounded-3xl shadow-2xl group overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop"
-                alt="UBro Heavyweight Oversized Streetwear Editorial"
+                src={SINGLE_TSHIRT_IMAGE}
+                alt="Overbro Heavyweight Oversized Streetwear Editorial"
                 fill
                 priority
                 sizes="(max-width: 1024px) 90vw, 40vw"
@@ -103,7 +114,7 @@ export const Hero: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-60" />
 
               {/* Floating Editorial Badge (Bottom Left) */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 bg-neutral-950/90 backdrop-blur-md border border-neutral-800 text-left space-y-1">
+              <div className="absolute bottom-6 left-6 right-6 p-4 bg-neutral-950/90 backdrop-blur-md border border-neutral-800 rounded-2xl text-left space-y-1">
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-neutral-400">
                     DROP // VOL. 04

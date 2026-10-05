@@ -91,7 +91,7 @@ export const SearchOverlay: React.FC = () => {
           <button
             type="button"
             onClick={closeSearch}
-            className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition-colors p-2"
+            className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white transition-colors p-2 rounded-full hover:bg-neutral-900"
           >
             <span>CLOSE [ESC]</span>
             <X className="w-5 h-5" />
@@ -100,7 +100,7 @@ export const SearchOverlay: React.FC = () => {
 
         {/* Search Input Form */}
         <form onSubmit={handleSearchSubmit} className="relative mt-2">
-          <div className="relative flex items-center border-b-2 border-neutral-700 focus-within:border-white transition-colors pb-3">
+          <div className="relative flex items-center bg-neutral-900/80 border border-neutral-800 focus-within:border-white transition-colors px-4 py-3.5 rounded-2xl shadow-xl">
             <Search className="w-6 h-6 text-neutral-400 mr-4 flex-shrink-0" />
             <input
               ref={inputRef}
@@ -108,13 +108,13 @@ export const SearchOverlay: React.FC = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search 250+ GSM oversized tees, graphics, weights..."
-              className="w-full bg-transparent text-xl sm:text-3xl font-extrabold text-white placeholder-neutral-600 focus:outline-none tracking-tight uppercase"
+              className="w-full bg-transparent text-xl sm:text-2xl font-extrabold text-white placeholder-neutral-500 focus:outline-none tracking-tight uppercase"
             />
             {query && (
               <button
                 type="button"
                 onClick={() => setQuery('')}
-                className="text-neutral-500 hover:text-white p-1"
+                className="text-neutral-500 hover:text-white p-1 rounded-full hover:bg-neutral-800"
                 aria-label="Clear query"
               >
                 <X className="w-5 h-5" />
@@ -134,7 +134,7 @@ export const SearchOverlay: React.FC = () => {
               key={term}
               type="button"
               onClick={() => handleSuggestionClick(term)}
-              className="text-xs font-semibold px-3 py-1.5 bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-600 uppercase tracking-wider transition-colors"
+              className="text-xs font-semibold px-3.5 py-1.5 bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-600 uppercase tracking-wider rounded-full transition-colors"
             >
               {term}
             </button>
@@ -152,7 +152,7 @@ export const SearchOverlay: React.FC = () => {
                 <Link
                   href="/t-shirts"
                   onClick={closeSearch}
-                  className="p-5 bg-neutral-900/80 border border-neutral-800 hover:border-white transition-colors text-left flex justify-between items-center group"
+                  className="p-5 bg-neutral-900/80 border border-neutral-800 hover:border-white transition-colors text-left flex justify-between items-center group rounded-2xl shadow-lg"
                 >
                   <div>
                     <h4 className="text-sm font-bold text-white uppercase tracking-wider">
@@ -166,7 +166,7 @@ export const SearchOverlay: React.FC = () => {
                 <Link
                   href="/shop?collection=heavyweight"
                   onClick={closeSearch}
-                  className="p-5 bg-neutral-900/80 border border-neutral-800 hover:border-white transition-colors text-left flex justify-between items-center group"
+                  className="p-5 bg-neutral-900/80 border border-neutral-800 hover:border-white transition-colors text-left flex justify-between items-center group rounded-2xl shadow-lg"
                 >
                   <div>
                     <h4 className="text-sm font-bold text-white uppercase tracking-wider">
@@ -200,9 +200,9 @@ export const SearchOverlay: React.FC = () => {
                     key={product.id}
                     href={`/products/${product.slug}`}
                     onClick={closeSearch}
-                    className="p-3 bg-neutral-900/60 border border-neutral-800 hover:border-neutral-600 transition-colors flex gap-3 group"
+                    className="p-3 bg-neutral-900/60 border border-neutral-800 hover:border-neutral-600 transition-colors flex gap-3 group rounded-2xl shadow-md"
                   >
-                    <div className="relative w-16 h-20 bg-neutral-950 flex-shrink-0 overflow-hidden">
+                    <div className="relative w-16 h-20 bg-neutral-950 flex-shrink-0 overflow-hidden rounded-xl">
                       <Image
                         src={product.images[0]}
                         alt={product.name}
@@ -234,7 +234,7 @@ export const SearchOverlay: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className="text-center py-12 border-t border-neutral-900">
+            <div className="text-center py-12 border border-neutral-900 bg-neutral-900/30 rounded-3xl p-8">
               <p className="text-sm font-bold uppercase tracking-wider text-neutral-400">
                 NO PIECES FOUND MATCHING "{query}"
               </p>
@@ -244,7 +244,7 @@ export const SearchOverlay: React.FC = () => {
               <Link
                 href="/shop"
                 onClick={closeSearch}
-                className="inline-block mt-4 bg-white text-neutral-950 text-xs font-bold uppercase tracking-wider px-6 py-2.5 hover:bg-neutral-200 transition-colors"
+                className="inline-block mt-4 bg-white text-neutral-950 text-xs font-bold uppercase tracking-wider px-6 py-2.5 hover:bg-neutral-200 transition-colors rounded-xl shadow-md"
               >
                 VIEW FULL COLLECTION
               </Link>

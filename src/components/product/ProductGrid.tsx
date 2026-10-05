@@ -15,12 +15,12 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
 }) => {
   if (products.length === 0) {
     return (
-      <div className="py-20 text-center border border-neutral-800 bg-neutral-900/30 p-8">
+      <div className="py-20 text-center border border-neutral-800 bg-neutral-900/30 p-8 rounded-3xl">
         <p className="text-sm font-bold uppercase tracking-wider text-neutral-400">
           {emptyMessage}
         </p>
         <p className="text-xs text-neutral-400 mt-2">
-          Adjust your filters or explore our complete oversized catalogue.
+          Explore our complete oversized catalogue or check back for upcoming drops.
         </p>
       </div>
     );

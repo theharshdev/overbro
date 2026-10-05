@@ -76,7 +76,7 @@ export const CartDrawer: React.FC = () => {
 
       {/* Drawer Container */}
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-neutral-950 border-l border-neutral-800 flex flex-col shadow-2xl">
+        <div className="w-screen max-w-md bg-neutral-950 border-l border-neutral-800 rounded-l-3xl flex flex-col shadow-2xl overflow-hidden">
           {/* Header */}
           <div className="p-5 border-b border-neutral-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -88,7 +88,7 @@ export const CartDrawer: React.FC = () => {
             <button
               type="button"
               onClick={closeDrawer}
-              className="p-1.5 text-neutral-400 hover:text-white transition-colors"
+              className="p-1.5 text-neutral-400 hover:text-white transition-colors rounded-full hover:bg-neutral-900"
               aria-label="Close bag drawer"
             >
               <X className="w-5 h-5" />
@@ -121,7 +121,7 @@ export const CartDrawer: React.FC = () => {
                     closeDrawer();
                     router.push('/shop');
                   }}
-                  className="mt-2 bg-white text-neutral-950 text-xs font-bold uppercase tracking-wider px-6 py-3 hover:bg-neutral-200 transition-colors"
+                  className="mt-2 bg-white text-neutral-950 text-xs font-bold uppercase tracking-wider px-6 py-3 hover:bg-neutral-200 transition-colors rounded-xl shadow-md"
                 >
                   EXPLORE DROPS
                 </button>
@@ -146,7 +146,7 @@ export const CartDrawer: React.FC = () => {
             <div className="border-t border-neutral-800 p-5 bg-neutral-900/50 space-y-4">
               {/* Active Coupon Badge if any */}
               {coupon && (
-                <div className="flex items-center justify-between bg-neutral-900 border border-neutral-800 p-2.5 text-xs">
+                <div className="flex items-center justify-between bg-neutral-900 border border-neutral-800 p-2.5 text-xs rounded-xl">
                   <div className="flex items-center gap-1.5 text-emerald-400 font-mono font-bold">
                     <Tag className="w-3.5 h-3.5" />
                     <span>{coupon.code} APPLIED</span>
@@ -190,7 +190,7 @@ export const CartDrawer: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleCheckoutClick}
-                  className="w-full bg-white text-neutral-950 text-xs font-extrabold uppercase tracking-widest py-3.5 hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-white text-neutral-950 text-xs font-extrabold uppercase tracking-widest rounded-xl py-3.5 hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 shadow-lg"
                 >
                   <span>PROCEED TO CHECKOUT</span>
                   <ArrowRight className="w-4 h-4" />
@@ -199,7 +199,7 @@ export const CartDrawer: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleViewBagClick}
-                  className="w-full bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs font-bold uppercase tracking-wider py-2.5 hover:text-white hover:border-neutral-700 transition-colors"
+                  className="w-full bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs font-bold uppercase tracking-wider rounded-xl py-2.5 hover:text-white hover:border-neutral-700 transition-colors"
                 >
                   VIEW FULL BAG & OFFERS
                 </button>
@@ -208,7 +208,7 @@ export const CartDrawer: React.FC = () => {
               {/* Secure guarantee note */}
               <div className="flex items-center justify-center gap-1.5 text-[10px] text-neutral-400 pt-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-neutral-300" />
-                <span>Guaranteed Safe & Encrypted Checkout • Cash on Delivery</span>
+                <span>Guaranteed Safe & Encrypted Checkout • 100% Secure</span>
               </div>
             </div>
           )}

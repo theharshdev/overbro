@@ -36,7 +36,7 @@ export const InstagramSection: React.FC = () => {
           {LOOKBOOK_IMAGES.map((item, idx) => (
             <div
               key={idx}
-              className="group relative aspect-[3/4] bg-neutral-900 overflow-hidden border border-neutral-800/80"
+              className="group relative aspect-[3/4] bg-neutral-900 overflow-hidden border border-neutral-800/80 rounded-2xl shadow-lg"
             >
               <Image
                 src={item.url}
