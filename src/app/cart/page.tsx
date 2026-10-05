@@ -93,7 +93,7 @@ export default function CartPage() {
             YOUR BAG IS CURRENTLY EMPTY
           </h2>
           <p className="text-xs text-neutral-400 leading-relaxed">
-            You haven't added any oversized garments yet. Discover our latest drop of heavyweight tees and hoodies.
+            You haven't added any oversized garments yet. Discover our latest drop of 250+ GSM heavyweight tees.
           </p>
           <div className="pt-2">
             <Link

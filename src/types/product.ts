@@ -1,4 +1,4 @@
-export type ProductCategory = 'oversized-t-shirts' | 'oversized-hoodies';
+export type ProductCategory = 'oversized-t-shirts';
 
 export type ProductSize = 'S' | 'M' | 'L' | 'XL' | 'XXL';
 
@@ -31,7 +31,7 @@ export interface Product {
   price: number;
   originalPrice?: number;
   discountPercentage?: number;
-  gsm: number;
+  gsm: number; // 250+ GSM
   fabric: string;
   fit: string;
   description: string;
@@ -42,7 +42,7 @@ export interface Product {
   rating: number;
   reviewCount: number;
   badge?: 'NEW DROP' | 'BESTSELLER' | 'LIMITED' | 'HEAVYWEIGHT' | 'STAFF PICK';
-  collection: 'the-core' | 'heavyweight' | 'after-dark' | 'new-drop';
+  collection: 'the-core' | 'heavyweight' | 'after-dark' | 'new-drop' | 'vintage-wash';
   collectionLabel: string;
   featured?: boolean;
   isNewDrop?: boolean;
@@ -57,6 +57,7 @@ export interface FilterState {
   colors: string[];
   priceRange: [number, number];
   collections: string[];
+  gsmRange: string;
   inStockOnly: boolean;
   sortBy: 'featured' | 'newest' | 'bestselling' | 'price-asc' | 'price-desc';
 }

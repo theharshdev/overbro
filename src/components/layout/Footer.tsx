@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
               <ShieldCheck className="w-5 h-5 text-neutral-300 flex-shrink-0" />
               <div>
                 <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                  280–450 GSM COTTON
+                  250–320 GSM COTTON
                 </h4>
                 <p className="text-[11px] text-neutral-400">Pre-shrunk, bio-washed heavy gauge</p>
               </div>
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-xs leading-relaxed text-neutral-400 max-w-sm">
-              UBro is an Indian oversized streetwear house specializing exclusively in heavyweight drop-shoulder T-shirts (240–300 GSM) and structured luxury hoodies (400–450 GSM). Engineered for everyday durability and modern street presence.
+              UBro is an Indian oversized streetwear house specializing exclusively in heavyweight drop-shoulder T-shirts (250–320 GSM). Engineered for everyday durability, architectural drape, and modern street presence.
             </p>
 
             {/* Newsletter in Brand Col */}
@@ -129,17 +129,22 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs">
               <li>
                 <Link href="/shop" className="hover:text-white transition-colors">
-                  All Products
+                  All Oversized Tees
                 </Link>
               </li>
               <li>
                 <Link href="/t-shirts" className="hover:text-white transition-colors">
-                  Oversized T-Shirts
+                  Oversized T-Shirts (250+ GSM)
                 </Link>
               </li>
               <li>
-                <Link href="/hoodies" className="hover:text-white transition-colors">
-                  Oversized Hoodies
+                <Link href="/shop?collection=heavyweight" className="hover:text-white transition-colors">
+                  Heavyweight Armor (280–320 GSM)
+                </Link>
+              </li>
+              <li>
+                <Link href="/shop?collection=after-dark" className="hover:text-white transition-colors">
+                  Graphic Drops (After Dark)
                 </Link>
               </li>
               <li>
@@ -148,13 +153,8 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/shop?collection=heavyweight" className="hover:text-white transition-colors">
-                  Heavyweight Armor
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop?collection=after-dark" className="hover:text-white transition-colors">
-                  After Dark Nocturnal
+                <Link href="/collections" className="hover:text-white transition-colors">
+                  Drop Archives
                 </Link>
               </li>
             </ul>

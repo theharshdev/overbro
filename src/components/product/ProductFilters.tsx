@@ -87,43 +87,42 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
         )}
       </div>
 
-      {/* Category Filter (if not locked to a specific page) */}
-      {!categoryLocked && (
-        <div className="space-y-3">
-          <h4 className="font-bold uppercase tracking-wider text-neutral-400 text-[11px]">
-            CATEGORY
-          </h4>
-          <div className="space-y-2">
-            {[
-              { id: 'all', label: 'All Oversized Pieces' },
-              { id: 'oversized-t-shirts', label: 'Oversized T-Shirts (240–300 GSM)' },
-              { id: 'oversized-hoodies', label: 'Oversized Hoodies (400–450 GSM)' },
-            ].map((cat) => (
-              <label
-                key={cat.id}
-                className="flex items-center gap-2.5 cursor-pointer group select-none"
+      {/* Fabric Weight Filter */}
+      <div className="space-y-3">
+        <h4 className="font-bold uppercase tracking-wider text-neutral-400 text-[11px]">
+          FABRIC WEIGHT (GSM)
+        </h4>
+        <div className="space-y-2">
+          {[
+            { id: 'all', label: 'All 250+ GSM Weights' },
+            { id: '250-260', label: '250–260 GSM Bio-Washed' },
+            { id: '270-290', label: '270–290 GSM Heavyweight' },
+            { id: '300-320', label: '300–320 GSM Ultra Armor' },
+          ].map((cat) => (
+            <label
+              key={cat.id}
+              className="flex items-center gap-2.5 cursor-pointer group select-none"
+            >
+              <input
+                type="radio"
+                name="category"
+                checked={filters.category === cat.id}
+                onChange={() => handleCategoryChange(cat.id)}
+                className="w-3.5 h-3.5 accent-white cursor-pointer"
+              />
+              <span
+                className={`text-xs transition-colors ${
+                  filters.category === cat.id
+                    ? 'text-white font-bold'
+                    : 'text-neutral-400 group-hover:text-white'
+                }`}
               >
-                <input
-                  type="radio"
-                  name="category"
-                  checked={filters.category === cat.id}
-                  onChange={() => handleCategoryChange(cat.id)}
-                  className="w-3.5 h-3.5 accent-white cursor-pointer"
-                />
-                <span
-                  className={`text-xs transition-colors ${
-                    filters.category === cat.id
-                      ? 'text-white font-bold'
-                      : 'text-neutral-400 group-hover:text-white'
-                  }`}
-                >
-                  {cat.label}
-                </span>
-              </label>
-            ))}
-          </div>
+                {cat.label}
+              </span>
+            </label>
+          ))}
         </div>
-      )}
+      </div>
 
       {/* Size Filter */}
       <div className="space-y-3">

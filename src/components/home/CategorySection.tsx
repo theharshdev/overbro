@@ -12,14 +12,14 @@ export const CategorySection: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-neutral-900 gap-4">
           <div>
             <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-neutral-400 font-bold block mb-1">
-              FOCUSED SILHOUETTES
+              250+ GSM ARCHITECTURE
             </span>
             <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white">
-              THE TWO PILLARS
+              THE OVERSIZED EDITIONS
             </h2>
           </div>
           <p className="text-xs text-neutral-400 max-w-md">
-            We don't make 50 different apparel categories. We obsess over perfecting two: the ultimate oversized T-shirt and the ultimate oversized hoodie.
+            We don't dilute our focus with 50 apparel categories. We obsess over one single canvas: the ultimate 250+ GSM oversized T-shirt.
           </p>
         </div>
 

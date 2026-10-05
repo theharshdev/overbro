@@ -20,7 +20,7 @@ export const BrandStatement: React.FC = () => {
 
           {/* Core Story Paragraph */}
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed font-normal">
-            Most brands make standard T-shirts and simply label them "oversized" by increasing the size tag. That results in awkward necklines, baggy midsections, and sloppy lengths. At <strong>UBro</strong>, we start from zero: bespoke drop-shoulder geometry, tightened rib collars that never stretch out, and dense 240 to 450 GSM cotton that drapes with architectural authority.
+            Most brands make standard T-shirts and simply label them "oversized" by increasing the size tag. That results in awkward necklines, baggy midsections, and sloppy lengths. At <strong>UBro</strong>, we start from zero: bespoke drop-shoulder geometry, tightened rib collars that never stretch out, and dense 250 to 320 GSM cotton that drapes with architectural authority.
           </p>
 
           {/* Feature Grid / Pillar Cards */}
@@ -30,10 +30,10 @@ export const BrandStatement: React.FC = () => {
                 <Layers className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-bold uppercase tracking-wider text-white">
-                HEAVYWEIGHT GUAGE
+                250+ GSM HEAVYWEIGHT
               </h3>
               <p className="text-xs text-neutral-400 leading-relaxed">
-                240–300 GSM for T-shirts and 400–450 GSM for hoodies. Heavier fabric creates a clean sculptural silhouette that doesn't cling to your body.
+                We never use lightweight 160–180 GSM cotton. Every UBro tee starts at 250 GSM and scales to 320 GSM armor cotton. Weight gives the silhouette its architectural drape and zero cling.
               </p>
             </div>
 

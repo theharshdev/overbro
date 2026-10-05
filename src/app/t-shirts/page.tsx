@@ -96,7 +96,7 @@ export default function TShirtsPage() {
       {/* Hero Category Banner */}
       <div className="mt-4 mb-8 pb-6 border-b border-neutral-800">
         <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-neutral-400 font-bold block mb-1">
-          240 – 300 GSM HEAVYWEIGHT
+          250 – 320 GSM HEAVYWEIGHT
         </span>
         <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
           OVERSIZED T-SHIRTS

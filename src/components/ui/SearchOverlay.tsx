@@ -11,12 +11,12 @@ import { Product } from '@/types/product';
 
 const POPULAR_SEARCHES = [
   'Oversized Black Tee',
-  'Heavyweight 450 GSM',
-  'Oversized Hoodie',
+  'Monolith 320 GSM',
+  'Heavyweight 280 GSM',
+  'Acid Reign Graphic',
   'Charcoal Washed',
-  'Acid Reign',
-  'Bone White',
-  'The Core',
+  'Tokyo Mirage',
+  'Bone Ecru',
 ];
 
 export const SearchOverlay: React.FC = () => {
@@ -107,7 +107,7 @@ export const SearchOverlay: React.FC = () => {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search oversized tees, hoodies, GSM weights..."
+              placeholder="Search 250+ GSM oversized tees, graphics, weights..."
               className="w-full bg-transparent text-xl sm:text-3xl font-extrabold text-white placeholder-neutral-600 focus:outline-none tracking-tight uppercase"
             />
             {query && (
@@ -146,7 +146,7 @@ export const SearchOverlay: React.FC = () => {
           {query.trim() === '' ? (
             <div className="pt-8 border-t border-neutral-900 text-center">
               <span className="text-xs uppercase tracking-widest text-neutral-400 font-bold block mb-4">
-                EXPLORE CURATED CATEGORIES
+                EXPLORE CURATED TEES
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
                 <Link
@@ -156,23 +156,23 @@ export const SearchOverlay: React.FC = () => {
                 >
                   <div>
                     <h4 className="text-sm font-bold text-white uppercase tracking-wider">
-                      OVERSIZED T-SHIRTS
+                      ALL OVERSIZED TEES
                     </h4>
-                    <span className="text-xs text-neutral-400">240 - 300 GSM Heavyweight</span>
+                    <span className="text-xs text-neutral-400">250 - 320 GSM Pure Cotton</span>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
 
                 <Link
-                  href="/hoodies"
+                  href="/shop?collection=heavyweight"
                   onClick={closeSearch}
                   className="p-5 bg-neutral-900/80 border border-neutral-800 hover:border-white transition-colors text-left flex justify-between items-center group"
                 >
                   <div>
                     <h4 className="text-sm font-bold text-white uppercase tracking-wider">
-                      OVERSIZED HOODIES
+                      HEAVYWEIGHT ARMOR
                     </h4>
-                    <span className="text-xs text-neutral-400">400 - 450 GSM Loopback</span>
+                    <span className="text-xs text-neutral-400">280 - 320 GSM Zero Cling</span>
                   </div>
                   <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
@@ -213,7 +213,7 @@ export const SearchOverlay: React.FC = () => {
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center">
                       <span className="text-[10px] text-neutral-400 uppercase tracking-widest font-semibold block">
-                        {product.gsm} GSM • {product.category === 'oversized-t-shirts' ? 'TEE' : 'HOODIE'}
+                        {product.gsm} GSM • OVERSIZED TEE
                       </span>
                       <h4 className="text-xs font-bold text-white uppercase tracking-wider truncate group-hover:underline">
                         {product.name}
@@ -239,7 +239,7 @@ export const SearchOverlay: React.FC = () => {
                 NO PIECES FOUND MATCHING "{query}"
               </p>
               <p className="text-xs text-neutral-400 mt-1">
-                Try searching for "oversized tee", "450 GSM", "hoodie", or browse our curated catalog.
+                Try searching for "250 GSM", "320 GSM", "Acid Reign", "Monolith", or browse our curated catalog.
               </p>
               <Link
                 href="/shop"

@@ -36,8 +36,6 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({
 
   if (!isOpen) return null;
 
-  const isTee = category === 'oversized-t-shirts';
-
   const tShirtSizes = [
     { size: 'S', chest: '44"', length: '29"', shoulder: '21.5"', sleeve: '9.0"' },
     { size: 'M', chest: '46"', length: '30"', shoulder: '22.5"', sleeve: '9.5"' },
@@ -46,15 +44,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({
     { size: 'XXL', chest: '52"', length: '33"', shoulder: '25.5"', sleeve: '11.0"' },
   ];
 
-  const hoodieSizes = [
-    { size: 'S', chest: '46"', length: '27.5"', shoulder: '23.0"', sleeve: '24.5"' },
-    { size: 'M', chest: '48"', length: '28.5"', shoulder: '24.0"', sleeve: '25.0"' },
-    { size: 'L', chest: '50"', length: '29.5"', shoulder: '25.0"', sleeve: '25.5"' },
-    { size: 'XL', chest: '52"', length: '30.5"', shoulder: '26.0"', sleeve: '26.0"' },
-    { size: 'XXL', chest: '54"', length: '31.5"', shoulder: '27.0"', sleeve: '26.5"' },
-  ];
-
-  const sizes = isTee ? tShirtSizes : hoodieSizes;
+  const sizes = tShirtSizes;
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto">
@@ -70,7 +60,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({
             <div className="flex items-center gap-2">
               <Ruler className="w-5 h-5 text-neutral-300" />
               <h3 className="text-sm font-extrabold uppercase tracking-widest text-white">
-                {isTee ? 'OVERSIZED T-SHIRT' : 'OVERSIZED HOODIE'} SIZE MATRIX
+                250+ GSM OVERSIZED T-SHIRT SIZE MATRIX
               </h3>
             </div>
             <button

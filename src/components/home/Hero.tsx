@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
 
             {/* Supporting Copy */}
             <p className="text-base sm:text-lg text-neutral-300 font-normal max-w-xl leading-relaxed">
-              Premium oversized T-shirts and hoodies built for everyday comfort. Engineered exclusively with 240–450 GSM luxury combed cotton, bespoke drop shoulders, and an unapologetic urban silhouette.
+              India's dedicated oversized T-shirt house. Exclusively engineered with 250+ GSM luxury combed cotton, bespoke drop shoulders, and an unapologetic urban silhouette.
             </p>
 
             {/* CTAs */}
@@ -45,15 +45,15 @@ export const Hero: React.FC = () => {
                 href="/t-shirts"
                 className="bg-white text-neutral-950 px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-neutral-200 transition-all text-center flex items-center justify-center gap-2 group shadow-xl"
               >
-                <span>SHOP T-SHIRTS</span>
+                <span>SHOP OVERSIZED TEES</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
-                href="/hoodies"
+                href="/shop?collection=heavyweight"
                 className="bg-neutral-900 border border-neutral-700 text-white px-8 py-4 text-xs font-black uppercase tracking-widest hover:bg-neutral-800 hover:border-neutral-500 transition-all text-center flex items-center justify-center gap-2 group"
               >
-                <span>SHOP HOODIES</span>
+                <span>HEAVYWEIGHT 280–320 GSM</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
             <div className="pt-6 border-t border-neutral-900 grid grid-cols-3 gap-4 max-w-lg">
               <div>
                 <span className="text-xl sm:text-2xl font-black font-mono text-white block">
-                  280-450
+                  250-320
                 </span>
                 <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-neutral-400 font-medium">
                   GSM Heavy Cotton

@@ -18,7 +18,7 @@ export default function AboutPage() {
           THIS IS UBro.
         </h1>
         <p className="text-base sm:text-xl text-neutral-300 leading-relaxed font-normal pt-2">
-          We exist for one uncompromising mission: to engineer the most comfortable, structurally flawless oversized T-shirts and hoodies in Indian streetwear.
+          We exist for one uncompromising mission: to engineer the most comfortable, structurally flawless 250+ GSM oversized T-shirts in Indian streetwear.
         </p>
       </div>
 
@@ -69,10 +69,10 @@ export default function AboutPage() {
               <Layers className="w-6 h-6" />
             </div>
             <h4 className="text-base font-bold uppercase tracking-wider text-white">
-              1. HEAVYWEIGHT OR NOTHING
+              1. 250+ GSM OR NOTHING
             </h4>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              We never use lightweight 160–180 GSM cotton. Our T-shirts begin at 240 GSM and scale to 300 GSM armor. Our hoodies are 400 to 450 GSM French loopback fleece. Weight gives the silhouette its architectural drape.
+              We never use lightweight 160–180 GSM cotton. Every UBro T-shirt begins at 250 GSM and scales to 320 GSM heavy armor cotton. Weight gives the silhouette its architectural drape and zero cling.
             </p>
           </div>
 
@@ -93,10 +93,10 @@ export default function AboutPage() {
               <Sparkles className="w-6 h-6" />
             </div>
             <h4 className="text-base font-bold uppercase tracking-wider text-white">
-              3. TWO CATEGORIES. TOTAL MASTERY.
+              3. ONE CANVAS. TOTAL MASTERY.
             </h4>
             <p className="text-xs text-neutral-400 leading-relaxed">
-              We don't sell jeans, shirts, or accessories. By focusing exclusively on oversized T-shirts and hoodies, every millimeter of thread, stitching density, and dye formula receives our undivided attention.
+              We don't sell jeans, shirts, or hoodies. By focusing exclusively on oversized T-shirts crafted from 250+ GSM fabrics, every millimeter of thread, collar ribbing, and drop-shoulder drape receives our undivided attention.
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function AboutPage() {
           EXPERIENCE THE FIT.
         </h3>
         <p className="text-xs sm:text-sm text-neutral-400 max-w-md mx-auto">
-          Explore our limited drops of 240–300 GSM tees and 400–450 GSM hoodies today.
+          Explore our limited drops of 250–320 GSM heavyweight oversized tees today.
         </p>
         <div className="pt-2">
           <Link

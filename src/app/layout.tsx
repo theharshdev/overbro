@@ -16,24 +16,25 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'UBro — Oversized T-Shirts & Hoodies',
+  title: 'UBro — 250+ GSM Oversized T-Shirts',
   description:
-    'Discover UBro — premium oversized T-shirts and hoodies built for everyday comfort and modern streetwear. 280–450 GSM luxury Indian cotton with custom drop shoulders.',
+    'Discover UBro — premium 250+ GSM oversized T-shirts built for everyday comfort, architectural drape, and modern Indian streetwear. 100% combed cotton with custom drop shoulders.',
   keywords: [
     'UBro',
     'oversized t-shirts',
-    'oversized hoodies',
-    'Indian streetwear',
+    '250+ GSM t-shirts',
     'heavyweight t-shirts',
-    '450 GSM hoodie',
+    '300 GSM t-shirt',
+    '320 GSM t-shirt',
+    'Indian streetwear',
     'drop shoulder tees',
     'streetwear India',
   ],
   authors: [{ name: 'UBro Streetwear' }],
   openGraph: {
-    title: 'UBro — Oversized T-Shirts & Hoodies',
+    title: 'UBro — 250+ GSM Oversized T-Shirts',
     description:
-      'Discover UBro — premium oversized T-shirts and hoodies built for everyday comfort and modern streetwear.',
+      'Discover UBro — premium 250+ GSM oversized T-shirts built for everyday comfort, architectural drape, and modern streetwear.',
     url: 'https://ubro.in',
     siteName: 'UBro Streetwear',
     locale: 'en_IN',

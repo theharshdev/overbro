@@ -12,12 +12,13 @@ import { ProductGrid } from '@/components/product/ProductGrid';
 import { PRODUCTS } from '@/data/products';
 
 export default function HomePage() {
-  const [activeDropTab, setActiveDropTab] = useState<'all' | 't-shirts' | 'hoodies'>('all');
+  const [activeDropTab, setActiveDropTab] = useState<'all' | 'heavyweight' | 'graphic' | 'core'>('all');
 
   // Filter products for New Drops
   const newDrops = PRODUCTS.filter((p) => {
-    if (activeDropTab === 't-shirts') return p.category === 'oversized-t-shirts';
-    if (activeDropTab === 'hoodies') return p.category === 'oversized-hoodies';
+    if (activeDropTab === 'heavyweight') return p.gsm >= 280;
+    if (activeDropTab === 'graphic') return p.collection === 'after-dark';
+    if (activeDropTab === 'core') return p.collection === 'the-core';
     return true;
   }).slice(0, 8);
 
@@ -29,7 +30,7 @@ export default function HomePage() {
       {/* 1. Large Cinematic Editorial Hero */}
       <Hero />
 
-      {/* 2. Category Section: Oversized T-Shirts & Oversized Hoodies */}
+      {/* 2. Category Section: The Oversized Editions */}
       <CategorySection />
 
       {/* 3. New Drops Product Grid */}
@@ -40,7 +41,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-neutral-400 mb-1">
                 <Flame className="w-4 h-4 text-red-500" />
-                <span>FRESH OFF THE LOOM</span>
+                <span>FRESH OFF THE LOOM • 250+ GSM</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-white">
                 NEW DROPS // 2026
@@ -48,39 +49,50 @@ export default function HomePage() {
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <button
                 type="button"
                 onClick={() => setActiveDropTab('all')}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
+                className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
                   activeDropTab === 'all'
                     ? 'bg-white text-neutral-950 border-white'
                     : 'bg-neutral-900 text-neutral-400 border-neutral-800 hover:text-white hover:border-neutral-700'
                 }`}
               >
-                ALL DROPS
+                ALL 250+ GSM
               </button>
               <button
                 type="button"
-                onClick={() => setActiveDropTab('t-shirts')}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
-                  activeDropTab === 't-shirts'
+                onClick={() => setActiveDropTab('heavyweight')}
+                className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
+                  activeDropTab === 'heavyweight'
                     ? 'bg-white text-neutral-950 border-white'
                     : 'bg-neutral-900 text-neutral-400 border-neutral-800 hover:text-white hover:border-neutral-700'
                 }`}
               >
-                OVERSIZED TEES
+                HEAVYWEIGHT (280+ GSM)
               </button>
               <button
                 type="button"
-                onClick={() => setActiveDropTab('hoodies')}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
-                  activeDropTab === 'hoodies'
+                onClick={() => setActiveDropTab('graphic')}
+                className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
+                  activeDropTab === 'graphic'
                     ? 'bg-white text-neutral-950 border-white'
                     : 'bg-neutral-900 text-neutral-400 border-neutral-800 hover:text-white hover:border-neutral-700'
                 }`}
               >
-                OVERSIZED HOODIES
+                GRAPHIC DROPS
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveDropTab('core')}
+                className={`px-3.5 py-2 text-xs font-bold uppercase tracking-wider border transition-all ${
+                  activeDropTab === 'core'
+                    ? 'bg-white text-neutral-950 border-white'
+                    : 'bg-neutral-900 text-neutral-400 border-neutral-800 hover:text-white hover:border-neutral-700'
+                }`}
+              >
+                THE CORE (250 GSM)
               </button>
             </div>
           </div>

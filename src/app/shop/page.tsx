@@ -83,8 +83,14 @@ function ShopContent() {
         if (!matches) return false;
       }
 
-      // Category filter
-      if (filters.category !== 'all' && product.category !== filters.category) {
+      // Category / Fabric Weight filter
+      if (filters.category === '250-260' && (product.gsm < 250 || product.gsm > 260)) {
+        return false;
+      }
+      if (filters.category === '270-290' && (product.gsm < 270 || product.gsm > 290)) {
+        return false;
+      }
+      if (filters.category === '300-320' && product.gsm < 300) {
         return false;
       }
 
@@ -149,10 +155,7 @@ function ShopContent() {
           ...(filters.category !== 'all'
             ? [
                 {
-                  label:
-                    filters.category === 'oversized-t-shirts'
-                      ? 'OVERSIZED T-SHIRTS'
-                      : 'OVERSIZED HOODIES',
+                  label: `${filters.category} GSM`,
                 },
               ]
             : []),
@@ -162,17 +165,13 @@ function ShopContent() {
       {/* Header Banner */}
       <div className="mt-4 mb-8 pb-6 border-b border-neutral-800">
         <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-neutral-400 font-bold block mb-1">
-          CATALOGUE // DROP 2026
+          CATALOGUE // 250+ GSM DROPS
         </span>
         <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white">
-          {filters.category === 'oversized-t-shirts'
-            ? 'OVERSIZED T-SHIRTS'
-            : filters.category === 'oversized-hoodies'
-            ? 'OVERSIZED HOODIES'
-            : 'ALL OVERSIZED PIECES'}
+          ALL OVERSIZED TEES
         </h1>
         <p className="text-xs sm:text-sm text-neutral-400 max-w-2xl mt-2">
-          Engineered exclusively with heavyweight 240–450 GSM Indian combed cotton. Cut with signature drop shoulders for an effortless, confident street silhouette.
+          Engineered exclusively with heavyweight 250–320 GSM Indian combed cotton. Cut with signature drop shoulders for an effortless, confident street silhouette with zero cling.
         </p>
       </div>
 
@@ -205,7 +204,7 @@ function ShopContent() {
           <span className="text-[11px] font-mono text-neutral-500 uppercase">ACTIVE:</span>
           {filters.category !== 'all' && (
             <span className="inline-flex items-center gap-1.5 bg-neutral-900 border border-neutral-800 px-2.5 py-1 text-[11px] font-bold text-white uppercase">
-              {filters.category === 'oversized-t-shirts' ? 'T-Shirts' : 'Hoodies'}
+              WEIGHT: {filters.category} GSM
               <button
                 type="button"
                 onClick={() => setFilters({ ...filters, category: 'all' })}

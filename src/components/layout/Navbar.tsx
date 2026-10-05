@@ -47,8 +47,9 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Shop All', href: '/shop' },
-    { name: 'Oversized T-Shirts', href: '/t-shirts' },
-    { name: 'Hoodies', href: '/hoodies' },
+    { name: 'Oversized Tees', href: '/t-shirts' },
+    { name: 'Heavyweight (280+ GSM)', href: '/shop?collection=heavyweight' },
+    { name: 'Graphic Drops', href: '/shop?collection=after-dark' },
     { name: 'New Drops', href: '/shop?collection=new-drop', isNew: true },
     { name: 'Collections', href: '/collections' },
     { name: 'About', href: '/about' },
@@ -227,22 +228,22 @@ export const Navbar: React.FC = () => {
                   className="p-3 bg-neutral-900 border border-neutral-800 text-center hover:border-neutral-700 transition-colors"
                 >
                   <span className="block text-xs font-bold text-white uppercase tracking-wider">
-                    T-Shirts
+                    ALL TEES
                   </span>
                   <span className="block text-[10px] text-neutral-400 mt-0.5">
-                    240-300 GSM
+                    250+ GSM HEAVY
                   </span>
                 </Link>
                 <Link
-                  href="/hoodies"
+                  href="/shop?collection=heavyweight"
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-3 bg-neutral-900 border border-neutral-800 text-center hover:border-neutral-700 transition-colors"
                 >
                   <span className="block text-xs font-bold text-white uppercase tracking-wider">
-                    Hoodies
+                    HEAVYWEIGHT
                   </span>
                   <span className="block text-[10px] text-neutral-400 mt-0.5">
-                    400-450 GSM
+                    280–320 GSM
                   </span>
                 </Link>
               </div>

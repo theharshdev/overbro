@@ -92,16 +92,7 @@ export const ProductDetailClient: React.FC<ProductDetailClientProps> = ({
       <Breadcrumbs
         items={[
           { label: 'SHOP', href: '/shop' },
-          {
-            label:
-              product.category === 'oversized-t-shirts'
-                ? 'OVERSIZED T-SHIRTS'
-                : 'OVERSIZED HOODIES',
-            href:
-              product.category === 'oversized-t-shirts'
-                ? '/t-shirts'
-                : '/hoodies',
-          },
+          { label: 'OVERSIZED TEES', href: '/t-shirts' },
           { label: product.name },
         ]}
       />

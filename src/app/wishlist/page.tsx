@@ -55,7 +55,7 @@ export default function WishlistPage() {
             YOUR WISHLIST IS EMPTY
           </h2>
           <p className="text-xs text-neutral-400 leading-relaxed">
-            Hit the heart icon on any oversized T-shirt or hoodie to bookmark it for later. Items remain saved in your browser.
+            Hit the heart icon on any 250+ GSM oversized T-shirt to bookmark it for later. Items remain saved in your browser.
           </p>
           <div className="pt-2">
             <Link

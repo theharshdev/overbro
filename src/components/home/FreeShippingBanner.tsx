@@ -16,7 +16,7 @@ export const FreeShippingBanner: React.FC = () => {
               FREE SHIPPING ON ALL ORDERS ABOVE ₹999
             </h3>
             <p className="text-xs sm:text-sm text-neutral-400">
-              Stock up on essential 280 GSM tees or pair an oversized tee with a 450 GSM hoodie to unlock automatic complimentary express shipping.
+              Stock up on our heavyweight 250–320 GSM oversized tees to unlock automatic complimentary express shipping across India.
             </p>
           </div>
 

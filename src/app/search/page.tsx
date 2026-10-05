@@ -50,7 +50,7 @@ function SearchPageContent() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search oversized tees, hoodies, colors, GSM..."
+            placeholder="Search 250+ GSM oversized tees, graphics, weights..."
             className="w-full bg-transparent text-sm text-white placeholder-neutral-500 focus:outline-none uppercase tracking-wider font-semibold"
           />
           {query && (
