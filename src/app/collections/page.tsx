@@ -27,7 +27,7 @@ export default function CollectionsPage() {
           <Link
             key={col.id}
             href={col.slug}
-            className="group relative h-[420px] sm:h-[480px] bg-neutral-900 border border-neutral-800 overflow-hidden block"
+            className="group relative h-105 sm:h-120 bg-neutral-900 border border-neutral-800 overflow-hidden block"
           >
             <Image
               src={col.image}
@@ -36,7 +36,7 @@ export default function CollectionsPage() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
 
             <div className="absolute top-6 right-6 z-10">
               <span className="w-10 h-10 bg-white text-neutral-950 flex items-center justify-center group-hover:bg-neutral-200 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">

@@ -45,7 +45,7 @@ function SearchPageContent() {
       {/* Search Input Bar */}
       <div className="relative max-w-xl mb-8">
         <div className="relative flex items-center border border-neutral-800 bg-neutral-900 px-4 py-3 focus-within:border-white transition-colors">
-          <Search className="w-5 h-5 text-neutral-400 mr-3 flex-shrink-0" />
+          <Search className="w-5 h-5 text-neutral-400 mr-3 shrink-0" />
           <input
             type="text"
             value={query}

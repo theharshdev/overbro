@@ -28,7 +28,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
               key={idx}
               type="button"
               onClick={() => setSelectedIdx(idx)}
-              className={`relative w-16 h-20 sm:w-20 sm:h-24 flex-shrink-0 bg-neutral-900 rounded-xl overflow-hidden border transition-all ${
+              className={`relative w-16 h-20 sm:w-20 sm:h-24 shrink-0 bg-neutral-900 rounded-xl overflow-hidden border transition-all ${
                 selectedIdx === idx
                   ? 'border-white ring-1 ring-white'
                   : 'border-neutral-800 opacity-60 hover:opacity-100'
@@ -48,7 +48,7 @@ export const ProductGallery: React.FC<ProductGalleryProps> = ({
       )}
 
       {/* Main Large Image */}
-      <div className="relative aspect-[3/4] w-full bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden group select-none shadow-xl">
+      <div className="relative aspect-3/4 w-full bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden group select-none shadow-xl">
         <Image
           src={images[selectedIdx] || images[0]}
           alt={productName}

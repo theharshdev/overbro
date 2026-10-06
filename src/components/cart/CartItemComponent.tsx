@@ -27,7 +27,7 @@ export const CartItemComponent: React.FC<CartItemComponentProps> = ({
         href={`/products/${item.slug}`}
         className={`relative ${
           compact ? 'w-20 h-24' : 'w-24 h-32'
-        } bg-neutral-900 rounded-xl flex-shrink-0 overflow-hidden group border border-neutral-800`}
+        } bg-neutral-900 rounded-xl shrink-0 overflow-hidden group border border-neutral-800`}
       >
         <Image
           src={item.image}

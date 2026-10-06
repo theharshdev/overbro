@@ -207,7 +207,7 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
   return (
     <>
       {/* Desktop Sidebar View */}
-      <aside className="hidden lg:block w-64 flex-shrink-0 bg-neutral-950 border border-neutral-800 p-5 self-start sticky top-24">
+      <aside className="hidden lg:block w-64 shrink-0 bg-neutral-950 border border-neutral-800 p-5 self-start sticky top-24">
         {content}
       </aside>
 

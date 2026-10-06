@@ -64,7 +64,7 @@ export default function AboutPage() {
 
           <div className="space-y-3 pt-2">
             <div className="p-4 bg-neutral-900/80 border border-neutral-800/80 rounded-2xl flex items-start gap-3">
-              <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+              <Check className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div>
                 <span className="text-xs font-bold uppercase text-white block">250–320 GSM Structural Cotton</span>
                 <p className="text-xs text-neutral-400 mt-0.5">Heavy gauge zero-cling fabric that holds a rigid, sculptural silhouette all day.</p>
@@ -72,7 +72,7 @@ export default function AboutPage() {
             </div>
 
             <div className="p-4 bg-neutral-900/80 border border-neutral-800/80 rounded-2xl flex items-start gap-3">
-              <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+              <Check className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div>
                 <span className="text-xs font-bold uppercase text-white block">High-Density 1.25" Ribbed Collar</span>
                 <p className="text-xs text-neutral-400 mt-0.5">Twin-needle bound ribbed neck that never bacon-curls or loosens through washes.</p>
@@ -80,7 +80,7 @@ export default function AboutPage() {
             </div>
 
             <div className="p-4 bg-neutral-900/80 border border-neutral-800/80 rounded-2xl flex items-start gap-3">
-              <Check className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+              <Check className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div>
                 <span className="text-xs font-bold uppercase text-white block">4-Inch Drop Shoulder Geometry</span>
                 <p className="text-xs text-neutral-400 mt-0.5">Engineered broad shoulders that taper cleanly into loose, elbow-grazing sleeves.</p>
@@ -88,7 +88,7 @@ export default function AboutPage() {
             </div>
 
             <div className="p-4 bg-neutral-900/80 border border-neutral-800/80 rounded-2xl flex items-start gap-3">
-              <X className="w-5 h-5 text-neutral-600 flex-shrink-0 mt-0.5" />
+              <X className="w-5 h-5 text-neutral-600 shrink-0 mt-0.5" />
               <div>
                 <span className="text-xs font-bold uppercase text-neutral-400 line-through block">Flawed Fast-Fashion Sizing</span>
                 <p className="text-xs text-neutral-500 mt-0.5">No 160 GSM sheer fabrics, no clinging polyester blends, and no stretched out necklines.</p>

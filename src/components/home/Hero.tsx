@@ -19,8 +19,8 @@ export const Hero: React.FC = () => {
         />
         {/* Dark Vignette & Gradient Overlays for crisp readability */}
         <div className="absolute inset-0 bg-neutral-950/80 sm:bg-neutral-950/75" />
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/85 to-neutral-950/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950/50" />
+        <div className="absolute inset-0 bg-linear-to-r from-neutral-950 via-neutral-950/85 to-neutral-950/55" />
+        <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-transparent to-neutral-950/50" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
             <div className="space-y-2">
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[1.05]">
                 OVERSIZED. <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-100 via-neutral-400 to-neutral-500">
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-neutral-100 via-neutral-400 to-neutral-500">
                   BY DESIGN.
                 </span>
               </h1>
@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
 
           {/* Right Editorial Fashion Imagery Column (5 cols) */}
           <div className="lg:col-span-5 relative">
-            <div className="relative aspect-[3/4] w-full max-w-md mx-auto bg-neutral-900 border border-neutral-800 rounded-3xl shadow-2xl group overflow-hidden">
+            <div className="relative aspect-3/4 w-full max-w-md mx-auto bg-neutral-900 border border-neutral-800 rounded-3xl shadow-2xl group overflow-hidden">
               <Image
                 src={SINGLE_TSHIRT_IMAGE}
                 alt="Overbro Heavyweight Oversized Streetwear Editorial"
@@ -111,7 +111,7 @@ export const Hero: React.FC = () => {
               />
 
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-transparent to-transparent opacity-60" />
 
               {/* Floating Editorial Badge (Bottom Left) */}
               <div className="absolute bottom-6 left-6 right-6 p-4 bg-neutral-950/90 backdrop-blur-md border border-neutral-800 rounded-2xl text-left space-y-1">

@@ -75,7 +75,7 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({
 
           {/* Fit Manifesto Note */}
           <div className="mt-4 p-4 bg-neutral-900 border border-neutral-800 flex items-start gap-3 text-xs rounded-2xl">
-            <Info className="w-4 h-4 text-neutral-400 flex-shrink-0 mt-0.5" />
+            <Info className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
             <div className="text-neutral-300 space-y-1">
               <p className="font-semibold text-white uppercase tracking-wider">
                 DESIGNED FOR AN AUTHENTIC OVERSIZED SILHOUETTE

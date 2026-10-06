@@ -26,7 +26,7 @@ export default function ExchangesPage() {
       {/* Strict Policy Banner */}
       <div className="mb-16 p-8 bg-neutral-950 border border-neutral-800 rounded-3xl space-y-4 shadow-xl">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-amber-950/80 border border-amber-500/40 flex items-center justify-center text-amber-400 flex-shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-amber-950/80 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0">
             <ShieldAlert className="w-5 h-5" />
           </div>
           <div>

@@ -101,7 +101,7 @@ export const SearchOverlay: React.FC = () => {
         {/* Search Input Form */}
         <form onSubmit={handleSearchSubmit} className="relative mt-2">
           <div className="relative flex items-center bg-neutral-900/80 border border-neutral-800 focus-within:border-white transition-colors px-4 py-3.5 rounded-2xl shadow-xl">
-            <Search className="w-6 h-6 text-neutral-400 mr-4 flex-shrink-0" />
+            <Search className="w-6 h-6 text-neutral-400 mr-4 shrink-0" />
             <input
               ref={inputRef}
               type="text"
@@ -202,7 +202,7 @@ export const SearchOverlay: React.FC = () => {
                     onClick={closeSearch}
                     className="p-3 bg-neutral-900/60 border border-neutral-800 hover:border-neutral-600 transition-colors flex gap-3 group rounded-2xl shadow-md"
                   >
-                    <div className="relative w-16 h-20 bg-neutral-950 flex-shrink-0 overflow-hidden rounded-xl">
+                    <div className="relative w-16 h-20 bg-neutral-950 shrink-0 overflow-hidden rounded-xl">
                       <Image
                         src={product.images[0]}
                         alt={product.name}

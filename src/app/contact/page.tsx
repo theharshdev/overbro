@@ -54,7 +54,7 @@ export default function ContactPage() {
           <div className="space-y-4">
             {/* Email Card */}
             <div className="p-5 bg-neutral-900 border border-neutral-800 rounded-2xl flex items-start gap-4">
-              <div className="w-10 h-10 bg-neutral-950 border border-neutral-800 rounded-xl flex items-center justify-center flex-shrink-0 text-white">
+              <div className="w-10 h-10 bg-neutral-950 border border-neutral-800 rounded-xl flex items-center justify-center shrink-0 text-white">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
@@ -75,7 +75,7 @@ export default function ContactPage() {
 
             {/* WhatsApp Card */}
             <div className="p-5 bg-neutral-900 border border-neutral-800 rounded-2xl flex items-start gap-4">
-              <div className="w-10 h-10 bg-neutral-950 border border-neutral-800 rounded-xl flex items-center justify-center flex-shrink-0 text-emerald-400">
+              <div className="w-10 h-10 bg-neutral-950 border border-neutral-800 rounded-xl flex items-center justify-center shrink-0 text-emerald-400">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
@@ -98,7 +98,7 @@ export default function ContactPage() {
 
             {/* Atelier Card */}
             <div className="p-5 bg-neutral-900 border border-neutral-800 rounded-2xl flex items-start gap-4">
-              <div className="w-10 h-10 bg-neutral-950 border border-neutral-800 rounded-xl flex items-center justify-center flex-shrink-0 text-white">
+              <div className="w-10 h-10 bg-neutral-950 border border-neutral-800 rounded-xl flex items-center justify-center shrink-0 text-white">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
@@ -116,7 +116,7 @@ export default function ContactPage() {
 
             {/* Support Hours */}
             <div className="p-5 bg-neutral-900 border border-neutral-800 rounded-2xl flex items-start gap-4">
-              <div className="w-10 h-10 bg-neutral-950 border border-neutral-800 rounded-xl flex items-center justify-center flex-shrink-0 text-white">
+              <div className="w-10 h-10 bg-neutral-950 border border-neutral-800 rounded-xl flex items-center justify-center shrink-0 text-white">
                 <Clock className="w-5 h-5" />
               </div>
               <div>

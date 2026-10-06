@@ -229,7 +229,7 @@ export default function AccountPage() {
                           <div key={i} className="py-2.5 flex items-center justify-between gap-3">
                             <div className="flex items-center gap-3">
                               {item.image && (
-                                <div className="relative w-12 h-14 bg-neutral-900 overflow-hidden border border-neutral-800 flex-shrink-0 rounded-xl">
+                                <div className="relative w-12 h-14 bg-neutral-900 overflow-hidden border border-neutral-800 shrink-0 rounded-xl">
                                   <Image
                                     src={item.image}
                                     alt={item.name}
@@ -305,7 +305,7 @@ export default function AccountPage() {
                       key={prod.id}
                       className="p-4 bg-neutral-950 border border-neutral-800 flex gap-3 items-center rounded-2xl shadow-md"
                     >
-                      <div className="relative w-16 h-20 bg-neutral-900 flex-shrink-0 border border-neutral-800 overflow-hidden rounded-xl">
+                      <div className="relative w-16 h-20 bg-neutral-900 shrink-0 border border-neutral-800 overflow-hidden rounded-xl">
                         <Image
                           src={prod.images[0]}
                           alt={prod.name}

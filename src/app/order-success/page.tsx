@@ -85,7 +85,7 @@ function OrderSuccessContent() {
             {latestOrder.items.map((it: any, idx: number) => (
               <div key={idx} className="py-3 flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="relative w-12 h-16 bg-neutral-900 overflow-hidden border border-neutral-800 flex-shrink-0 rounded-xl">
+                  <div className="relative w-12 h-16 bg-neutral-900 overflow-hidden border border-neutral-800 shrink-0 rounded-xl">
                     <Image
                       src={it.image}
                       alt={it.name}

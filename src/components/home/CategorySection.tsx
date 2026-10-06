@@ -29,7 +29,7 @@ export const CategorySection: React.FC = () => {
             <Link
               key={category.id}
               href={category.slug}
-              className="group relative h-[480px] sm:h-[560px] rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-800 block shadow-xl"
+              className="group relative h-120 sm:h-140 rounded-3xl overflow-hidden bg-neutral-900 border border-neutral-800 block shadow-xl"
             >
               {/* Background Image */}
               <Image
@@ -41,7 +41,7 @@ export const CategorySection: React.FC = () => {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-neutral-950 via-neutral-950/40 to-transparent" />
 
               {/* Top Tag */}
               <div className="absolute top-6 left-6 right-6 flex items-center justify-between z-10">

@@ -17,13 +17,13 @@ export const ToastContainer: React.FC = () => {
           className="pointer-events-auto bg-neutral-900 border border-neutral-700 text-white p-4 shadow-2xl flex items-start gap-3 transition-all duration-200 rounded-2xl"
         >
           {toast.type === 'success' && (
-            <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+            <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
           )}
           {toast.type === 'error' && (
-            <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+            <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
           )}
           {toast.type === 'info' && (
-            <Info className="w-5 h-5 text-neutral-300 flex-shrink-0 mt-0.5" />
+            <Info className="w-5 h-5 text-neutral-300 shrink-0 mt-0.5" />
           )}
 
           <div className="flex-1">

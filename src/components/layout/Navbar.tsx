@@ -268,7 +268,7 @@ export const Navbar: React.FC = () => {
                         {link.name}
                         {link.isNew && (
                           <span
-                            className="text-[9px] bg-red-600 !text-white px-2 py-0.5 font-bold uppercase tracking-wider rounded-full"
+                            className="text-[9px] bg-red-600 text-white! px-2 py-0.5 font-bold uppercase tracking-wider rounded-full"
                             style={{ color: '#ffffff' }}
                           >
                             HOT

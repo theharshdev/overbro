@@ -91,7 +91,7 @@ export default function TrackOrderPage() {
             {/* Timeline Milestones */}
             <div className="space-y-4">
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-emerald-950 border border-emerald-500/60 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-emerald-950 border border-emerald-500/60 flex items-center justify-center text-emerald-400 shrink-0">
                   <CheckCircle2 className="w-4 h-4" />
                 </div>
                 <div>
@@ -101,7 +101,7 @@ export default function TrackOrderPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-emerald-950 border border-emerald-500/60 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-emerald-950 border border-emerald-500/60 flex items-center justify-center text-emerald-400 shrink-0">
                   <Package className="w-4 h-4" />
                 </div>
                 <div>
@@ -111,7 +111,7 @@ export default function TrackOrderPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 rounded-full bg-blue-950 border border-blue-500/60 flex items-center justify-center text-blue-400 flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-blue-950 border border-blue-500/60 flex items-center justify-center text-blue-400 shrink-0">
                   <Truck className="w-4 h-4" />
                 </div>
                 <div>
@@ -121,7 +121,7 @@ export default function TrackOrderPage() {
               </div>
 
               <div className="flex items-start gap-4 opacity-50">
-                <div className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-500 flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-500 shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>

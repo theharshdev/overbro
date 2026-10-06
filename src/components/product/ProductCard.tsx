@@ -42,7 +42,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, priority = fa
       }}
     >
       {/* Top Media Container (Aspect Ratio 3:4) */}
-      <div className="relative aspect-[3/4] w-full overflow-hidden bg-neutral-900 select-none rounded-t-2xl">
+      <div className="relative aspect-3/4 w-full overflow-hidden bg-neutral-900 select-none rounded-t-2xl">
         <Link href={`/products/${product.slug}`} className="block w-full h-full">
           {/* Main Primary Image */}
           <Image
